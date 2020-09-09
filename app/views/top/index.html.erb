@@ -1,0 +1,14 @@
+<h1>Top</h1>
+<% @view.headline_topics.each do | topic | %>
+  <%= content_tag :p, topic %>
+<% end %>
+
+<%= content_tag :h2, @view.recital_plans_title %>
+<% @view.recital_plans.each do | recital | %>
+  <%= content_tag :h3, recital.name %>
+  <%= content_tag :p, '日　　付：' + recital.date %>
+  <%= content_tag :p, '開場時間：' + recital.opening_time %>
+  <%= content_tag :p, '開演時間：' + recital.starting_time %>
+  <%= content_tag :p, '場　　所：' + recital.site %>
+  <%= content_tag :p, '詳　　細：' + recital.description %>
+<% end %>
