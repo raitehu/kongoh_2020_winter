@@ -1,4 +1,18 @@
 class Views::Top::Index < Views::BaseViewModel
+  def page_title
+    ' | トップページ'
+  end
+
+  def optional_stylesheets
+    css = super
+    css << 'top'
+    css << 'top-keyvisual'
+    css << 'top-welcome_event' if event_plan_exists?
+    css << 'top-recital' if recital_plan_exists?
+
+    return css
+  end
+
   def headline_topics
     [
       '京大金剛会はいつでも新入生を待っています',
@@ -37,6 +51,9 @@ class Views::Top::Index < Views::BaseViewModel
   ########################################
   #              公演予定                 #
   ########################################
+  def recital_plan_exists?
+    recital_plans.present?
+  end
   # 公演予定タイトル
   def recital_plans_title
     '公演予定'

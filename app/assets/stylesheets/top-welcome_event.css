@@ -1,0 +1,51 @@
+.top-welcome_event_area{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.top-welcome_event_area .top-welcome_event_events{
+    max-width: 400px;
+    border: 1px dotted;
+    margin: 10px auto 0px;
+    padding: 0px 10px;
+}
+
+.top-welcome_event_events h3{
+    margin-top: 10px;
+}
+
+.top-welcome_event_events .event_description{
+    text-align: left;
+}
+
+.top-welcome_event_events h4{
+    margin-top: 10px;
+}
+
+.top-welcome_event_events table{
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.top-welcome_event_events table tr{
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #a0a0a0;
+}
+
+.top-welcome_event_events table tr td{
+    border: none;
+}
+
+.top-welcome_event_events .event_detail{
+    margin: 10px auto 10px;
+    width: 80%;
+    height: 40px;
+    background-color: #A6E39D;
+}
+
+.top-welcome_event_events .event_detail a{
+    display: block;
+    padding: 8px;
+}

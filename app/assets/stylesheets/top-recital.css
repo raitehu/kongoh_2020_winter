@@ -1,0 +1,52 @@
+.top-recital_area{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.top-recital_area .top-recital{
+    max-width: 400px;
+    border: 1px dotted;
+    margin: 10px auto 0px;
+    padding: 0px 10px;
+}
+
+.top-recital h3{
+    margin-top: 10px;
+}
+
+.top-recital h4{
+    margin-top: 10px;
+}
+
+.top-recital table{
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.top-recital table tr{
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #a0a0a0;
+}
+
+.top-recital table tr td{
+    border: none;
+}
+
+.top-recital .recital_description{
+    text-align: left;
+    margin-top: 10px;
+}
+
+.top-recital .recital_detail{
+    margin: 10px auto 10px;
+    width: 80%;
+    height: 40px;
+    background-color: #F2F5AA;
+}
+
+.top-recital .recital_detail a{
+    display: block;
+    padding: 8px;
+}
