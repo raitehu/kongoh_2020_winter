@@ -20,3 +20,10 @@ a{
     text-decoration: none;
     color: #000000;
 }
+footer{
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 300px;
+    text-align: center;
+    padding-top: 70px;
+}

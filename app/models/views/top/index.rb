@@ -48,6 +48,10 @@ class Views::Top::Index < Views::BaseViewModel
     Settings.contact_means.select{ |cm| cm.type == 'sns'}
   end
 
+  def contact_content
+    Settings.views.top.contact.topics
+  end
+
   ########################################
   #              公演予定                 #
   ########################################
