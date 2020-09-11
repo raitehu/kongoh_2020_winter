@@ -1,0 +1,35 @@
+.top-keyvisual_area{
+    height: 100vh;
+    background-image: url('<%= asset_path 'background_light-min.png' %>');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.top-keyvisual_area::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 90%;
+}*/
+
+.top-keyvisual_area h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.top-keyvisual_area .keyvisual{
+    margin: auto;
+    transform: translate(-50%, -50%);
+    animation: fadein 2s ease-in-out;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}

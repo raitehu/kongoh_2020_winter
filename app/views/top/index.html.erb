@@ -1,0 +1,100 @@
+<div class="top-keyvisual_area">
+  <h1><%= image_tag 'logo-min.png', { alt: '京大金剛会ロゴ', class: "keyvisual" } %></h1>
+</div>
+
+<div class="container">
+  <div class="headline_topics">
+    <% @view.headline_topics.each do | topic | %>
+      <%= content_tag :p, topic %>
+    <% end %>
+  </div>
+
+  <% if @view.event_plan_exists? %>
+    <div class="top-welcome_event_area">
+      <%= content_tag :h2, @view.welcome_event_plans_title %>
+
+      <% @view.welcome_event_plans.each do | welcome_event | %>
+        <div class="top-welcome_event_events">
+          <%= content_tag :h3, welcome_event.name %>
+          <div class="event_description">
+            <%= content_tag :p,  welcome_event.description %>
+          </div>
+
+          <%= content_tag :h4, '日　　程' %>
+          <%= content_tag :table do %>
+            <% welcome_event.each_events.each do | each_event | %>
+              <% next if each_event.past_event? %>
+              <%= content_tag :tr do %>
+                <%= content_tag :td, each_event.date_str %>
+                <%= content_tag :td, each_event.event_time %>
+              <% end %>
+            <% end %>
+          <% end %>
+
+          <div class="event_detail_area">
+            <p class="event_detail">
+              <%= link_to '詳細はこちら', '#' %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @view.recital_plan_exists? %>
+    <div class="top-recital_area">
+      <%= content_tag :h2, @view.recital_plans_title %>
+      <% @view.recital_plans.each do | recital | %>
+        <div class="top-recital">
+          <%= content_tag :h3, recital.name %>
+          <%= content_tag :table do %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '日　　付：' %><%= content_tag :td, recital.date %>
+            <% end %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '開場時間：' %><%= content_tag :td, recital.opening_time %>
+            <% end %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '開演時間：' %><%= content_tag :td, recital.starting_time %>
+            <% end %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '場　　所：' %><%= content_tag :td, recital.site %>
+            <% end %>
+          <% end %>
+          <div class="recital_description">
+            <%= content_tag :p, recital.description %>
+          </div>
+          <div class="recital_detail_area">
+            <p class="recital_detail">
+              <%= link_to '詳細はこちら', '#' %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="top-others">
+    <% if @view.mail_all.present? %>
+      <!-- email -->
+      <% @view.mail_all.each do | mail | %>
+        <%= content_tag :div, { class: 'mail' } do %>
+          <%= content_tag :a, mail.title, { href: "mailto: #{mail.address}" } %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% if @view.sns_all.present? %>
+      <!-- sns -->
+      <% @view.sns_all.each do | sns | %>
+        <%= content_tag :div, { class: 'sns' } do %>
+          <% if sns.icon.present? %>
+            <%= content_tag :a, image_tag(sns.icon), { href: sns.url } %>
+          <% else %>
+            <%= content_tag :a, sns.label, { href: sns.url }%>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

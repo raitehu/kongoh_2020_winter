@@ -62,3 +62,6 @@ gem 'pry-rails'
 gem 'rubocop'
 
 gem 'rspec-rails', group: %i[development test]
+
+# settings.yml
+gem 'config'
