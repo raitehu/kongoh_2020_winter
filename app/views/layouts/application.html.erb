@@ -16,6 +16,25 @@
   </head>
 
   <body>
+    <div class="menu_area">
+      <div class="menu">
+        <p>menu</p>
+      </div>
+    </div>
+
+    <nav class="global_nav">
+      <div class="global_nav_wrap">
+        <ul class="global_nav_menu">
+          <li class="global_nav_menu_item"><%= link_to  "トップ", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "京大金剛会", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "公演記録", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "公演予定", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "能楽漫画", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "リンク集", '#' %></li>
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
 
     <footer>
