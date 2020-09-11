@@ -6,8 +6,32 @@ class Views::Top::Index < Views::BaseViewModel
     ]
   end
 
-  def welcome_events
-    
+  ########################################
+  #              新歓予定                 #
+  ########################################
+  def event_plan_exists?
+    welcome_event_plans.present?
+  end
+
+  def welcome_event_plans_title
+    '新歓予定'
+  end
+
+  def welcome_event_plans
+    @welcome_event_plans ||= WelcomeEvent.plans
+  end
+
+  ########################################
+  #              連絡手段                 #
+  ########################################
+  # メール
+  def mail_all
+    Settings.contact_means.select{ |cm| cm.type == 'mail'}
+  end
+
+  # SNS
+  def sns_all
+    Settings.contact_means.select{ |cm| cm.type == 'sns'}
   end
 
   ########################################

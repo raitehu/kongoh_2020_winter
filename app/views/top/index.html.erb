@@ -3,6 +3,19 @@
   <%= content_tag :p, topic %>
 <% end %>
 
+<% if @view.event_plan_exists? %>
+  <%= content_tag :h2, @view.welcome_event_plans_title %>
+  <% @view.welcome_event_plans.each do | welcome_event | %>
+    <%= content_tag :h3, welcome_event.name %>
+    <%= content_tag :p,  welcome_event.description %>
+    <%= content_tag :h4, '日　　程' %>
+    <% welcome_event.each_events.each do | each_event | %>
+      <% next if each_event.past_event? %>
+      <%= content_tag :p, each_event.date_str + each_event.event_time %>
+    <% end %>
+  <% end %>
+<% end %>
+
 <%= content_tag :h2, @view.recital_plans_title %>
 <% @view.recital_plans.each do | recital | %>
   <%= content_tag :h3, recital.name %>
@@ -11,4 +24,26 @@
   <%= content_tag :p, '開演時間：' + recital.starting_time %>
   <%= content_tag :p, '場　　所：' + recital.site %>
   <%= content_tag :p, '詳　　細：' + recital.description %>
+<% end %>
+
+<% if @view.mail_all.present? %>
+  <!-- email -->
+  <% @view.mail_all.each do | mail | %>
+    <%= content_tag :div, { class: 'mail' } do %>
+      <%= content_tag :a, mail.title, { href: "mailto: #{mail.address}" } %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if @view.sns_all.present? %>
+  <!-- sns -->
+  <% @view.sns_all.each do | sns | %>
+    <%= content_tag :div, { class: 'sns' } do %>
+      <% if sns.icon.present? %>
+        <%= content_tag :a, image_tag(sns.icon), { href: sns.url } %>
+      <% else %>
+        <%= content_tag :a, sns.label, { href: sns.url }%>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

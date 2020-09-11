@@ -1,0 +1,40 @@
+# 連絡手段
+contact_means:
+  - {
+      type:    'mail',
+      title:   'Mail',
+      address: 'kyodai.g@gmail.com',
+      icon:    ''
+    }
+  - {
+      type:    'mail',
+      title:   '見学・入会希望の方はこちら',
+      address: 'kug.shinkan@gmail.com',
+      icon:    ''
+    }
+  - {
+      type:  'sns',
+      title: 'Twitter',
+      label: '@kyodai_kongoh',
+      url:   'https://twitter.com/kyodai_kongoh',
+      icon:  ''
+    }
+  - {
+      type:  'sns',
+      title: 'Instagram',
+      label: 'kyodai_kongoh',
+      url:   'https://www.instagram.com/kyodai_kongoh/',
+      icon:  ''
+    }
+# view内で利用する文言
+views:
+  top:
+    headline:
+      title: '金剛会は年中入部大歓迎！'
+      topics:
+        - "geocities閉鎖に伴いサイト移転いたしました。('18.10.17)"
+        - 'ここは新しいサイトです。ブックマーク等の対処をお願いいたします。'
+    contact:
+      topics:
+        - '京大金剛会は年中入会を受付、歓迎しております。 少しでも興味を持たれた方はTwitter、メールなどで是非連絡を！ お稽古の見学なども承っております。'
+        - '令和２年も絶賛新歓中！ 心から新入部員を募集しております！！ 何回生でも、何大生でも大歓迎です！！！'
