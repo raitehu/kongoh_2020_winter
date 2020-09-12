@@ -16,6 +16,33 @@
   </head>
 
   <body>
+    <div class="menu_area" id="global_nav_menu_open">
+      <div class="menu">
+        <p>menu</p>
+      </div>
+    </div>
+
+    <nav class="global_nav">
+      <div class="global_nav_wrap">
+        <ul class="global_nav_menu">
+          <li class="global_nav_menu_item"><%= link_to  "トップ", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "京大金剛会", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "公演記録", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "公演予定", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "能楽漫画", '#' %></li>
+          <li class="global_nav_menu_item"><%= link_to  "リンク集", '#' %></li>
+          <li class="global_nav_menu_item" id="global_nav_menu_close"><span class="close_menu"></span></li>
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
+
+    <footer>
+      <p>当サイトの内容、テキスト、画像等の無断転載・無断使用を固く禁じます。</p>
+      <p>Unauthorized copying and replication of the contents of this site, text and images are strictly prohibited.</p>
+      <br>
+      <p>designed by Raitehu KIRISHIMA.</p>
+    </footer>
   </body>
 </html>

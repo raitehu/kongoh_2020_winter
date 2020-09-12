@@ -20,3 +20,133 @@ a{
     text-decoration: none;
     color: #000000;
 }
+footer{
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 350px;
+    text-align: center;
+    padding-top: 70px;
+}
+.menu_area{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 5%;
+    max-height: 30px;
+    width: 100vw;
+    background: rgba(0,81,103,1);
+    cursor: pointer;
+    animation: menu_fadein 2.1s ease-in-out;
+}
+@keyframes menu_fadein{
+    0%{
+        transform: translateY(150px);
+    }
+
+    80%{
+        transform: translateY(150px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+.menu{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-size: 2em;
+}
+.menu p{
+    background-color: rgba(0,81,103,1);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding-top: 22px;
+    padding-left: 7px;
+    cursor: pointer;
+}
+
+.global_nav{
+    background: rgba(0,81,103,0.9);
+    display: none;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.global_nav_wrap{
+    /* align-items: center;
+    justify-content: center;*/
+    display: flex;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
+ul.global_nav_menu{
+    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.global_nav_menu_item{
+    margin: 20px 0;
+}
+
+.global_nav_menu_item a{
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.global_nav_menu_item .close_menu{
+    font-size: 2em;
+    padding: 20px;
+    text-decoration: none;
+    transition: .5s;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 44px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.global_nav_menu_item .close_menu::before{
+    content: '';
+    background-color: rgba(0,81,103,1);
+    display: inline-block;
+    width:7px;
+    height:35px;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 432px;
+    left: calc(50% - 3px);
+}
+
+.global_nav_menu_item .close_menu::after{
+    content: '';
+    background-color:rgba(0,81,103,1);
+    display: inline-block;
+    width:7px;
+    height:35px;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 432px;
+    left: calc(50% - 3px);
+}

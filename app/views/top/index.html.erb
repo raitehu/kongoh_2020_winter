@@ -9,6 +9,15 @@
     <% end %>
   </div>
 
+  <% if @view.mail_all.present? %>
+    <!-- email -->
+    <% @view.mail_all.each do | mail | %>
+      <%= content_tag :p, { class: 'mail' } do %>
+        <%= content_tag :a, mail.title, { href: "mailto: #{mail.address}" } %>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <% if @view.event_plan_exists? %>
     <div class="top-welcome_event_area">
       <%= content_tag :h2, @view.welcome_event_plans_title %>
@@ -74,11 +83,14 @@
     <% end %>
   </div>
 
-  <div class="top-others">
+  <div class="top-contact_area">
+    <% @view.contact_content.each do | content | %>
+      <%= content_tag :p, content, class: 'contact_content' %>
+    <% end %>
     <% if @view.mail_all.present? %>
       <!-- email -->
       <% @view.mail_all.each do | mail | %>
-        <%= content_tag :div, { class: 'mail' } do %>
+        <%= content_tag :p, { class: 'mail' } do %>
           <%= content_tag :a, mail.title, { href: "mailto: #{mail.address}" } %>
         <% end %>
       <% end %>
@@ -87,11 +99,13 @@
     <% if @view.sns_all.present? %>
       <!-- sns -->
       <% @view.sns_all.each do | sns | %>
-        <%= content_tag :div, { class: 'sns' } do %>
-          <% if sns.icon.present? %>
+        <% if sns.icon.present? %>
+          <%= content_tag :p, { class: 'sns_with_icon' } do %>
             <%= content_tag :a, image_tag(sns.icon), { href: sns.url } %>
-          <% else %>
-            <%= content_tag :a, sns.label, { href: sns.url }%>
+          <% end %>
+        <% else %>
+          <%= content_tag :p, { class: 'sns' } do %>
+            <%= content_tag :a, sns.title, { href: sns.url }%>
           <% end %>
         <% end %>
       <% end %>
