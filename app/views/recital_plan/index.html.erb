@@ -1,0 +1,71 @@
+<div class="title_area">
+  <h1><%= @view.h1 %></h1>
+</div>
+
+<div class="container">
+  <div class="recital_plan-area">
+    <% if @view.recital_plan_exists? %>
+      <% @view.recital_plans.each do | recital | %>
+        <div class="recital">
+
+          <!-- 公演名称 -->
+          <%= content_tag :h2, recital.name %>
+
+          <!-- ポスター -->
+          <% if recital.poster.present? %>
+            <div class="recital_poster">
+              <%= image_tag(recital.poster.to_s) if recital.poster.present? %>
+            </div>
+          <% end %>
+
+          <!-- 諸情報 -->
+          <h3>公演情報</h3>
+          <%= content_tag :table do %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '日　　付：' %><%= content_tag :td, recital.date %>
+            <% end %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '開場時間：' %><%= content_tag :td, recital.opening_time %>
+            <% end %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '開演時間：' %><%= content_tag :td, recital.starting_time %>
+            <% end %>
+            <%= content_tag :tr do %>
+              <%= content_tag :td, '場　　所：' %><%= content_tag :td, recital.site %>
+            <% end %>
+          <% end %>
+
+          <!-- 演目 -->
+          <% if recital.programs.present? %>
+            <h3>演目</h3>
+            <% recital.programs.each do | program | %>
+                <%= content_tag :p do %>
+                <%== program.text %>
+                <% end %>
+            <% end %>
+            <br>
+            <%= content_tag :p, 'その他仕舞連吟多数' %>
+          <% end %>
+
+          <!-- 詳細 -->
+          <h3>その他の情報</h3>
+          <div class="recital_description">
+            <%= content_tag :p, recital.description %>
+          </div>
+
+        </div>
+      <% end %>
+    <% else %>
+      <div class="recital_plan-no_plan">
+        <p>現在、公演の予定はありません。</p>
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: 'common/contacts',
+             locals: {
+                      contact_content: @view.contact_content,
+                      mail_all:        @view.mail_all,
+                      sns_all:         @view.sns_all
+                     }
+  %>
+</div>

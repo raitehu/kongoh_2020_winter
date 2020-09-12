@@ -1,0 +1,30 @@
+<% if defined?(contact_content) && defined?(mail_all) && defined?(sns_all) %>
+  <div class="contact_area">
+    <% contact_content.each do | content | %>
+      <%= content_tag :p, content, class: 'contact_content' %>
+    <% end %>
+    <% if mail_all.present? %>
+      <!-- email -->
+      <% mail_all.each do | mail | %>
+        <%= content_tag :p, { class: 'mail' } do %>
+          <%= content_tag :a, mail.title, { href: "mailto: #{mail.address}" } %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% if sns_all.present? %>
+      <!-- sns -->
+      <% sns_all.each do | sns | %>
+        <% if sns.icon.present? %>
+          <%= content_tag :p, { class: 'sns_with_icon' } do %>
+            <%= content_tag :a, image_tag(sns.icon), { href: sns.url } %>
+          <% end %>
+        <% else %>
+          <%= content_tag :p, { class: 'sns' } do %>
+            <%= content_tag :a, sns.title, { href: sns.url }%>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

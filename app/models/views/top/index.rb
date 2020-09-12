@@ -7,10 +7,11 @@ class Views::Top::Index < Views::BaseViewModel
     css = super
     css << 'top'
     css << 'top-keyvisual'
+    css << 'contacts'
     css << 'top-welcome_event' if event_plan_exists?
     css << 'top-recital' if recital_plan_exists?
 
-    return css
+    css
   end
 
   def headline_topics
@@ -36,28 +37,12 @@ class Views::Top::Index < Views::BaseViewModel
   end
 
   ########################################
-  #              連絡手段                 #
-  ########################################
-  # メール
-  def mail_all
-    Settings.contact_means.select{ |cm| cm.type == 'mail'}
-  end
-
-  # SNS
-  def sns_all
-    Settings.contact_means.select{ |cm| cm.type == 'sns'}
-  end
-
-  def contact_content
-    Settings.views.top.contact.topics
-  end
-
-  ########################################
   #              公演予定                 #
   ########################################
   def recital_plan_exists?
     recital_plans.present?
   end
+
   # 公演予定タイトル
   def recital_plans_title
     '公演予定'
