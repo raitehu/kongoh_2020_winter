@@ -7,6 +7,7 @@ class Views::Top::Index < Views::BaseViewModel
     css = super
     css << 'top'
     css << 'top-keyvisual'
+    css << 'contacts'
     css << 'top-welcome_event' if event_plan_exists?
     css << 'top-recital' if recital_plan_exists?
 
@@ -33,23 +34,6 @@ class Views::Top::Index < Views::BaseViewModel
 
   def welcome_event_plans
     @welcome_event_plans ||= WelcomeEvent.plans
-  end
-
-  ########################################
-  #              連絡手段                 #
-  ########################################
-  # メール
-  def mail_all
-    Settings.contact_means.select{ |cm| cm.type == 'mail'}
-  end
-
-  # SNS
-  def sns_all
-    Settings.contact_means.select{ |cm| cm.type == 'sns'}
-  end
-
-  def contact_content
-    Settings.views.top.contact.topics
   end
 
   ########################################

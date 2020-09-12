@@ -1,0 +1,33 @@
+.recital_plan-area{
+    text-align: center;
+    min-height: 100px;
+    max-width: 400px;
+    margin: 0px auto 0px;
+}
+
+.recital_plan-area .recital_plan-no_plan{
+    padding-top: 50px;
+}
+
+.recital{
+    border: 1px dotted black;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 20px 10px 20px;
+}
+
+.recital h3{
+    margin: 20px auto;
+}
+
+.recital table{
+    margin: 0 auto;
+}
+
+.recital .optional_note{
+    font-size: 80%;
+}
+
+.recital .recital_description{
+    text-align: left;
+}

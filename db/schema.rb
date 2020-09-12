@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_043004) do
+ActiveRecord::Schema.define(version: 2020_09_12_093106) do
 
   create_table "each_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.date "date"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_043004) do
 
   create_table "programs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "performance_type"
     t.string "optional_note"
     t.bigint "recital_id", null: false
     t.datetime "created_at", precision: 6, null: false

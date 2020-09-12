@@ -1,4 +1,5 @@
 class Recital < ApplicationRecord
+  mount_uploader :poster, PosterUploader
   has_many :programs      , dependent: :destroy
   has_many :recital_photos, dependent: :destroy
 

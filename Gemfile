@@ -65,3 +65,5 @@ gem 'rspec-rails', group: %i[development test]
 
 # settings.yml
 gem 'config'
+
+gem 'carrierwave'
