@@ -11,7 +11,7 @@ class Views::Top::Index < Views::BaseViewModel
     css << 'top-welcome_event' if event_plan_exists?
     css << 'top-recital' if recital_plan_exists?
 
-    return css
+    css
   end
 
   def headline_topics
@@ -42,6 +42,7 @@ class Views::Top::Index < Views::BaseViewModel
   def recital_plan_exists?
     recital_plans.present?
   end
+
   # 公演予定タイトル
   def recital_plans_title
     '公演予定'

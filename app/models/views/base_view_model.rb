@@ -15,12 +15,12 @@ class Views::BaseViewModel
   ########################################
   # メール
   def mail_all
-    Settings.contact_means.select{ |cm| cm.type == 'mail'}
+    Settings.contact_means.select { |cm| cm.type == 'mail' }
   end
 
   # SNS
   def sns_all
-    Settings.contact_means.select{ |cm| cm.type == 'sns'}
+    Settings.contact_means.select { |cm| cm.type == 'sns' }
   end
 
   def contact_content

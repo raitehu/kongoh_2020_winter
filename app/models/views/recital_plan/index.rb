@@ -10,7 +10,7 @@ class Views::RecitalPlan::Index < Views::BaseViewModel
     css << 'title_area'
     css << 'recital_plan'
 
-    return css
+    css
   end
 
   def h1

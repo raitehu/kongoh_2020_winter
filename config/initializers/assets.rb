@@ -12,9 +12,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( reset.min.css )
-Rails.application.config.assets.precompile += %w( top.css )
-Rails.application.config.assets.precompile += %w( top-keyvisual.css )
-Rails.application.config.assets.precompile += %w( top-welcome_event.css )
-Rails.application.config.assets.precompile += %w( top-recital.css )
-Rails.application.config.assets.precompile += %w( contacts.css )
+Rails.application.config.assets.precompile += %w[reset.min.css]
+Rails.application.config.assets.precompile += %w[top.css]
+Rails.application.config.assets.precompile += %w[top-keyvisual.css]
+Rails.application.config.assets.precompile += %w[top-welcome_event.css]
+Rails.application.config.assets.precompile += %w[top-recital.css]
+Rails.application.config.assets.precompile += %w[contacts.css]
