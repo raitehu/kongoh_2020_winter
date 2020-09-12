@@ -1,5 +1,8 @@
 class EachEvent < ApplicationRecord
   belongs_to :welcome_event
+
+  scope :plans, -> { joins(:welcome_event).where('welcome_events.is_published = ?', true).where('date >= ?', Date.today) }
+
   def past_event?
     date < Date.today
   end

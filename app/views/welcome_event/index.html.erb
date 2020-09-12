@@ -1,0 +1,29 @@
+<div class="title_area">
+  <h1><%= @view.h1 %></h1>
+</div>
+
+<div class="container">
+  <!-- 訴求文言 -->
+  <div class="welcome_event-campaign_area">
+    
+  </div>
+
+  <!-- カレンダー -->
+  <div class="welcome_event-calendar_area">
+    
+  </div>
+
+  <!-- イベント詳細 -->
+  <div class="welcome_event-event_area">
+    
+  </div>
+
+  <!-- 連絡手段 -->
+  <%= render partial: 'common/contacts',
+             locals: {
+                      contact_content: @view.contact_content,
+                      mail_all:        @view.mail_all,
+                      sns_all:         @view.sns_all
+                     }
+  %>
+</div>
