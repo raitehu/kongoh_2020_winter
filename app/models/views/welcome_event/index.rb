@@ -8,12 +8,13 @@ class Views::WelcomeEvent::Index < Views::BaseViewModel
     css << 'top'
     css << 'title_area'
     css << 'contacts'
+    css << 'welcome_event'
 
     css
   end
 
   def h1
-    '新刊情報'
+    '新歓情報'
   end
 
   ########################################
@@ -31,9 +32,25 @@ class Views::WelcomeEvent::Index < Views::BaseViewModel
     @welcome_event_plans ||= WelcomeEvent.plans
   end
 
-  def event_month
-    EachEvent.plans
-             .map { |plan| plan.date.beginning_of_month }
-             .uniq
+  # 公開OKかつこれからのイベントのある月だけをDate型の配列で返す
+  def event_months_array
+    @event_month ||= event_plans.plans
+                                .map { |plan| plan.date.beginning_of_month }
+                                .uniq
+  end
+
+  def event_date
+    @event_date ||= event_plans.plans
+                               .map { |plan| plan.date }
+                               .uniq
+  end
+
+  def event_plans
+    @event_plans ||= EachEvent.plans
+  end
+
+  def events_in_the_month event_date
+    month_range = (event_date.beginning_of_month)..(event_date.end_of_month)
+    EachEvent.events_in_the_month(month_range)
   end
 end

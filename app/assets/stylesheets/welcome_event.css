@@ -1,0 +1,49 @@
+.welcome_event-calendar_area{
+    text-align: center;
+}
+
+.welcome_event-calendar_area h2{
+    margin: 20px auto;
+}
+
+.welcome_event-calendar_area h3{
+    margin: 20px auto;
+}
+
+.welcome_event-calendar_area table.calendar{
+    width: 100%;
+    max-width: 400px;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+.welcome_event-calendar_area table.calendar tr th{
+    text-align: center;
+    height: 45px;
+    border: 1px dotted;
+}
+
+.welcome_event-calendar_area table.calendar tr td{
+    text-align: center;
+    height: 45px;
+    border: 1px dotted;
+}
+
+.welcome_event-calendar_area table.calendar tr td.event_day{
+    background-color: #771623;
+    color: #FFFFFF;
+}
+
+.welcome_event-calendar_area table.event_list{
+    width: 100%;
+    max-width: 400px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border-top: 1px solid #000000;
+}
+
+.welcome_event-calendar_area table.event_list tr td{
+    text-align: center;
+    height: 45px;
+    border-bottom: 1px solid #000000;
+}
