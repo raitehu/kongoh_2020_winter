@@ -8,7 +8,7 @@ class EachEvent < ApplicationRecord
                     .order(date: :asc)
                 }
 
-  scope :events_in_the_month, -> (month_range){ where(date: month_range).order(date: :asc) }
+  scope :events_in_the_month, ->(month_range) { where(date: month_range).order(date: :asc) }
 
   def past_event?
     date < Date.today

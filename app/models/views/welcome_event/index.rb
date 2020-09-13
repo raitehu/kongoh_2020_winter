@@ -49,7 +49,7 @@ class Views::WelcomeEvent::Index < Views::BaseViewModel
     @event_plans ||= EachEvent.plans
   end
 
-  def events_in_the_month event_date
+  def events_in_the_month(event_date)
     month_range = (event_date.beginning_of_month)..(event_date.end_of_month)
     EachEvent.events_in_the_month(month_range)
   end
