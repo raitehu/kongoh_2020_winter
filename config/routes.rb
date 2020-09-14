@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about_kongoh/index'
   get 'welcome_event/index'
   get 'recital_plan/index'
   get '/', to: 'top#index', as: 'root'
