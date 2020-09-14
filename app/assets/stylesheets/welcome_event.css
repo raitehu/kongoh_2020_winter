@@ -1,3 +1,7 @@
+.welcome_event-campaign_area .contact_area{
+    margin-top: 0px;
+}
+
 .welcome_event-calendar_area{
     text-align: center;
 }
@@ -46,4 +50,36 @@
     text-align: center;
     height: 45px;
     border-bottom: 1px solid #000000;
+}
+
+.welcome_event-event_area{
+    margin: 100px auto;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.welcome_event_events{
+    margin: 20px auto;
+    border: 1px dotted black;
+    padding: 0px 10px;
+}
+
+.welcome_event_events h3{
+    margin: 20px auto;
+}
+
+.welcome_event_events h4{
+    margin: 20px auto;
+}
+
+.welcome_event_events table{
+    margin: 0px auto;
+    width: 100%;
+}
+
+.each_event{
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #eeeeee;
 }

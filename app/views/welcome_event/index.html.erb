@@ -5,7 +5,13 @@
 <div class="container">
   <!-- 訴求文言 -->
   <div class="welcome_event-campaign_area">
-    
+    <!-- 連絡手段 -->
+    <%= render partial: 'common/contacts',
+              locals: {
+                        contact_content: @view.contact_content,
+                        mail_all:        @view.mail_all
+                      }
+    %>
   </div>
 
   <!-- カレンダー -->
@@ -31,53 +37,56 @@
             <% end %>
             <%== '</tr><tr>' if day.wday == 6 %>
           <% end %>
-        <tr>
+        </tr>
       </table>
 
-      <table class="event_list">
+      <div class="event_list">
         <% @view.events_in_the_month(event_date).each do | event | %>
-          <%= content_tag :tr do %>
-           <%= content_tag :td, event.date_str %>
-           <%= content_tag :td, event.event_time %>
-           <%= content_tag :td, event.welcome_event.name %>
+          <%= content_tag :a, { href: "#event_#{event.welcome_event.id}" }  do %>
+            <div class="event">
+              <%= event.date_str %>
+              <%= event.event_time %>
+              <%= event.welcome_event.name %>
+            </div>
           <% end %>
         <% end %>
-      </table>
+      </div>
 
     <% end %>
   </div>
 
   <!-- イベント詳細 -->
   <div class="welcome_event-event_area">
-      <% @view.welcome_event_plans.each do | welcome_event | %>
-        <div class="welcome_event_events">
-          <%= content_tag :h3, welcome_event.name %>
-          <div class="event_description">
-            <%= content_tag :p,  welcome_event.description %>
-          </div>
-          <%= content_tag :h4, '日　　程' %>
+    <h2>イベント詳細</h2>
+    <% @view.welcome_event_plans.each do | welcome_event | %>
+      <div class="welcome_event_events" id="event_<%= welcome_event.id %>">
+        <%= content_tag :h3, welcome_event.name %>
+        <div class="event_description">
+          <%= content_tag :p,  welcome_event.description %>
+        </div>
+        <%= content_tag :h4, '日　　程' %>
+        <% welcome_event.each_events.each do | each_event | %>
+          <% next if each_event.past_event? %>
           <div class="each_event">
-            <% welcome_event.each_events.each do | each_event | %>
-              <% next if each_event.past_event? %>
-              <%= content_tag :table do %>
-                <%= content_tag :tr do %>
-                  <%= content_tag :td, '日時' %>
-                  <%= content_tag :td, "#{each_event.date_str} #{each_event.event_time}" %>
-                <% end %>
-                <%= content_tag :tr do %>
-                  <%= content_tag :td, '開催場所' %>
-                  <% if each_event.is_online %>
-                    <%= content_tag :td, each_event.site, class: 'online_event' %>
-                  <% else %>
-                    <%= content_tag :td, each_event.site %>
-                  <% end %>
+            <%= content_tag :table do %>
+              <%= content_tag :tr do %>
+                <%= content_tag :td, '日時' %>
+                <%= content_tag :td, "#{each_event.date_str} #{each_event.event_time}" %>
+              <% end %>
+              <%= content_tag :tr do %>
+                <%= content_tag :td, '開催場所' %>
+                <% if each_event.is_online %>
+                  <%= content_tag :td, each_event.site, class: 'online_event' %>
+                <% else %>
+                  <%= content_tag :td, each_event.site %>
                 <% end %>
               <% end %>
-              <%= content_tag :td, each_event.description %>
             <% end %>
+            <%= content_tag :td, each_event.description %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <!-- 連絡手段 -->
