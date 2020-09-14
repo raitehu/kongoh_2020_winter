@@ -1,0 +1,28 @@
+.commentary_area{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+}
+
+.commentary_area .commentary_title{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.commentary_area .commentary_title:first-child{
+    text-align: center;
+    margin: 0px auto 30px;
+}
+
+.commentary_area a{
+    display: inline-block;
+    margin: 0px 2px;
+    padding: 2px 2px;
+    border: 1px solid rgba(0,81,103,1);
+    color: rgba(0,81,103,1);
+}
+
+.commentary_area a:hover{
+    background-color: rgba(0,81,103,1);
+    color: white;
+}

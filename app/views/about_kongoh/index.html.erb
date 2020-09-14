@@ -1,0 +1,22 @@
+<div class="title_area">
+  <h1><%= @view.h1[0] %><br><%= @view.h1[1] %></h1>
+</div>
+
+<div class="container">
+  <div class="commentary_area">
+    <% @view.commentaries.each do | commentary | %>
+      <div class="commentary_title">
+        <%= content_tag :h2, commentary.heading %>
+      </div>
+      <p><%==  commentary.content %></p>
+    <% end %>
+  </div>
+
+  <%= render partial: 'common/contacts',
+             locals: {
+                      contact_content: @view.contact_content,
+                      mail_all:        @view.mail_all,
+                      sns_all:         @view.sns_all
+                     }
+  %>
+</div>
