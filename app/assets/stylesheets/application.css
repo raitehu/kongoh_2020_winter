@@ -36,14 +36,10 @@ footer{
     width: 100vw;
     background: rgba(0,81,103,1);
     cursor: pointer;
-    animation: menu_fadein 2.1s ease-in-out;
+    animation: menu_fadein .5s ease-in-out;
 }
 @keyframes menu_fadein{
     0%{
-        transform: translateY(150px);
-    }
-
-    80%{
         transform: translateY(150px);
     }
 
@@ -149,4 +145,8 @@ ul.global_nav_menu{
     position: absolute;
     top: 432px;
     left: calc(50% - 3px);
+}
+.container{
+    width: 100%;
+    padding: 0px 5% 0px;
 }

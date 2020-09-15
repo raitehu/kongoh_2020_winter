@@ -1,0 +1,36 @@
+<div class="title_area">
+  <%= content_tag :h1, @view.h1 %>
+</div>
+
+<div class="container">
+  <div class="recital_record_area">
+    <% @view.recital_record_groups_by_year.keys.each do | year | %>
+      <div class="recital_record_in_fiscal_year">
+        <%= content_tag :h3, "#{year}年度" %>
+        <% @view.recital_record_groups_by_year[year].each do | recital_record | %>
+          <div class="recital_record">
+            <%= content_tag :h4, recital_record.name %>
+            <%= content_tag :p, recital_record.str_date %>
+            <p>
+              <% recital_record.programs.each do | program | %>
+                <%== program.text %>
+              <% end %>
+            </p>
+            <% recital_record.recital_photos.each do | recital_photo | %>
+            <%= recital_photo.name %>
+            <%= recital_photo.image %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render partial: 'common/contacts',
+             locals: {
+                      contact_content: @view.contact_content,
+                      mail_all:        @view.mail_all,
+                      sns_all:         @view.sns_all
+                     }
+  %>
+</div>

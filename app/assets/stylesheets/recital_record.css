@@ -1,0 +1,22 @@
+.recital_record_area{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.recital_record_area .recital_record_in_fiscal_year{
+    margin: 0px auto 30px;
+}
+
+.recital_record_area .recital_record_in_fiscal_year .recital_record{
+    margin: 0px auto 20px;
+}
+
+.recital_record_in_fiscal_year h3{
+    margin: 0px auto 30px;
+}
+
+.recital_record h4{
+    margin: 20px auto;
+}

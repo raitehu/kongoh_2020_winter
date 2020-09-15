@@ -14,7 +14,7 @@ class EachEvent < ApplicationRecord
     date < Date.today
   end
 
-  def date_str
+  def str_date
     date.strftime('%m月%e日')
   end
 
