@@ -1,0 +1,15 @@
+<div class="title_area">
+  <%= content_tag :h1, @view.h1 %>
+</div>
+
+<div class="container">
+
+
+  <%= render partial: 'common/contacts',
+             locals: {
+                      contact_content: @view.contact_content,
+                      mail_all:        @view.mail_all,
+                      sns_all:         @view.sns_all
+                     }
+  %>
+</div>
