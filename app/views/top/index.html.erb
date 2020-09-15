@@ -34,7 +34,7 @@
             <% welcome_event.each_events.each do | each_event | %>
               <% next if each_event.past_event? %>
               <%= content_tag :tr do %>
-                <%= content_tag :td, each_event.date_str %>
+                <%= content_tag :td, each_event.str_date %>
                 <%= content_tag :td, each_event.event_time %>
               <% end %>
             <% end %>
@@ -58,7 +58,7 @@
           <%= content_tag :h3, recital.name %>
           <%= content_tag :table do %>
             <%= content_tag :tr do %>
-              <%= content_tag :td, '日　　付：' %><%= content_tag :td, recital.date %>
+              <%= content_tag :td, '日　　付：' %><%= content_tag :td, recital.str_date %>
             <% end %>
             <%= content_tag :tr do %>
               <%= content_tag :td, '開場時間：' %><%= content_tag :td, recital.opening_time %>

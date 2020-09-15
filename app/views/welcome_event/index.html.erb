@@ -44,7 +44,7 @@
         <% @view.events_in_the_month(event_date).each do | event | %>
           <%= content_tag :a, { href: "#event_#{event.welcome_event.id}" }  do %>
             <div class="event">
-              <%= event.date_str %>
+              <%= event.str_date %>
               <%= event.event_time %>
               <%= event.welcome_event.name %>
             </div>
@@ -71,7 +71,7 @@
             <%= content_tag :table do %>
               <%= content_tag :tr do %>
                 <%= content_tag :td, '日時' %>
-                <%= content_tag :td, "#{each_event.date_str} #{each_event.event_time}" %>
+                <%= content_tag :td, "#{each_event.str_date} #{each_event.event_time}" %>
               <% end %>
               <%= content_tag :tr do %>
                 <%= content_tag :td, '開催場所' %>
