@@ -1,4 +1,4 @@
-$(function(){
+jQuery(document).on('turbolinks:load', function(){
     $('#global_nav_menu_open').on('click', function(){
         $('.global_nav').fadeToggle();
     });

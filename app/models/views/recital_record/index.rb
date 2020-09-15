@@ -5,7 +5,6 @@ class Views::RecitalRecord::Index < Views::BaseViewModel
 
   def optional_stylesheets
     css = super
-    css << 'top'
     css << 'title_area'
     css << 'contacts'
     css << 'recital_record'

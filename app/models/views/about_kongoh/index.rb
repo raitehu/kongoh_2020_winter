@@ -5,7 +5,6 @@ class Views::AboutKongoh::Index < Views::BaseViewModel
 
   def optional_stylesheets
     css = super
-    css << 'top'
     css << 'title_area'
     css << 'contacts'
     css << 'about_kongoh'

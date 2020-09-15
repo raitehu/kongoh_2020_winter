@@ -5,7 +5,6 @@ class Views::WelcomeEvent::Index < Views::BaseViewModel
 
   def optional_stylesheets
     css = super
-    css << 'top'
     css << 'title_area'
     css << 'contacts'
     css << 'welcome_event'
