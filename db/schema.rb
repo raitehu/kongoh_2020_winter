@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_914_143_831) do
+ActiveRecord::Schema.define(version: 20_200_916_105_339) do
   create_table 'commentaries', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8mb4', force: :cascade do |t|
     t.string 'heading'
     t.text 'content'
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20_200_914_143_831) do
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['welcome_event_id'], name: 'index_each_events_on_welcome_event_id'
+  end
+
+  create_table 'links', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8mb4', force: :cascade do |t|
+    t.string 'url'
+    t.string 'title'
+    t.string 'school'
+    t.string 'link_type'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
   create_table 'programs', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8mb4', force: :cascade do |t|

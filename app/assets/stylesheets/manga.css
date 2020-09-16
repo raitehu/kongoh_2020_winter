@@ -1,0 +1,14 @@
+.manga_area{
+    width: 100%;
+    max-width: 600px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.manga_area .manga{
+    margin: 0px auto 80px;
+}
+
+.manga_area h2{
+    margin: 0px auto 80px;
+}

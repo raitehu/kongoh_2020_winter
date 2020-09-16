@@ -1,0 +1,38 @@
+.link_area{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.link_area h2{
+    margin: 30px auto 30px;
+}
+
+.link_area h2:first-child{
+    margin: 0px auto 30px;
+}
+
+.link_area .link a{
+    display: inline-block;
+    height: 60px;
+    width: 100%;
+    padding: 17px 10px;
+    background-color: #F6D4D8;
+    border: solid 1px #FFFFFF;
+}
+
+.link_area .link a::after{
+    content: '';
+    background: url('<%= asset_path 'ic_link.png' %>') no-repeat;
+    background-size: 18px;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    margin: auto 10px 3px;
+}
+
+.link_area .link a .school{
+    font-weight: bold;
+}

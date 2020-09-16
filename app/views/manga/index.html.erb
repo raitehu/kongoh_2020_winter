@@ -1,0 +1,24 @@
+<div class="title_area">
+  <%= content_tag :h1, @view.h1 %>
+</div>
+
+<div class="container">
+  <div class="manga_area">
+    <% @view.mangas_with_title.each do | manga | %>
+      <div class="manga">
+        <%= content_tag :h2, manga[:title] %>
+        <% manga[:images].each do | image | %>
+            <%= image_tag image, alt: manga[:title] %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render partial: 'common/contacts',
+             locals: {
+                      contact_content: @view.contact_content,
+                      mail_all:        @view.mail_all,
+                      sns_all:         @view.sns_all
+                     }
+  %>
+</div>
