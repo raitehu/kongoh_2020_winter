@@ -3,7 +3,16 @@
 </div>
 
 <div class="container">
-
+  <div class="link_area">
+    <% @view.link_types.each do | link_type | %>
+      <%= content_tag :h2, link_type %>
+      <% @view.links_group_by_type[link_type].each do | link | %>
+        <div class="link">
+          <a href="<%= link.url %>" target="_blank"><%== link.link_text %></a>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
   <%= render partial: 'common/contacts',
              locals: {

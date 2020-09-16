@@ -7,12 +7,24 @@ class Views::Link::Index < Views::BaseViewModel
     css = super
     css << 'title_area'
     css << 'contacts'
-    css << 'recital_record'
+    css << 'link'
 
     css
   end
 
   def h1
     'リンク'
+  end
+
+  def link_types
+    @link_types ||= Link.types
+  end
+
+  def links_group_by_type
+    @links_group_by_type = {}
+    link_types.each do |link_type|
+      @links_group_by_type.store(link_type, Link.links_find_by_type(link_type))
+    end
+    @links_group_by_type
   end
 end

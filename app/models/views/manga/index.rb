@@ -31,7 +31,7 @@ class Views::Manga::Index < Views::BaseViewModel
           '/image/manga/19_taisan/0706.jpg',
           '/image/manga/19_taisan/0707.jpg',
           '/image/manga/19_taisan/0708.jpg'
-        ]},
+        ] },
       { title: '平成19年度 創立45周年記念大会「胡蝶」',
         images: [
           '/image/manga/19_kocho/0701.jpg',
