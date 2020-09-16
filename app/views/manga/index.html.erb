@@ -3,7 +3,16 @@
 </div>
 
 <div class="container">
-
+  <div class="manga_area">
+    <% @view.mangas_with_title.each do | manga | %>
+      <div class="manga">
+        <%= content_tag :h2, manga[:title] %>
+        <% manga[:images].each do | image | %>
+            <%= image_tag image, alt: manga[:title] %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
   <%= render partial: 'common/contacts',
              locals: {
