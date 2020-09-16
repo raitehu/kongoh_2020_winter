@@ -1,0 +1,59 @@
+.btn{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+}
+
+.btn.btn_add{
+    background: #A4C520;
+}
+
+.btn.btn_edit{
+    background: #EDAD0B;
+}
+
+.btn.btn_delete{
+    background: #C7243A;
+}
+
+.welcome_event_all{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.welcome_event{
+    border: 1px dotted black;
+    margin: 0px auto 10px;
+    padding: 10px;
+}
+
+.welcome_event table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.welcome_event table tr td{
+    min-width: 100px;
+    border-top: 1px solid #a0a0a0;
+}
+
+.welcome_event table tr:first-child td{
+    border-top: none;
+}
+
+.welcome_event .each_event{
+    background-color: #efefef;
+    margin: 20px 0px 10px;
+}
+
+.welcome_event .each_event table{
+    width: 100%;
+}
+
+.welcome_event .each_event table tr td{
+    min-width: 100px;
+}

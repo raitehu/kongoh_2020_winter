@@ -8,4 +8,8 @@ class WelcomeEvent < ApplicationRecord
                 }
 
   scope :with_each_events, -> { joins(:each_events) }
+
+  def publish_status
+    is_published ? '公開中' : '非公開'
+  end
 end

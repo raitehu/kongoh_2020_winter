@@ -1,0 +1,74 @@
+<div class="title_area">
+  <%= content_tag :h1, @view.h1 %>
+</div>
+
+<div class="container">
+  <div class="welcome_event_all">
+    <%= content_tag :h2, '新歓イベント' %>
+    <%= link_to 'イベント追加', '#', class: 'btn btn_add' %>
+    <% @view.welcome_event_all.each do | welcome_event | %>
+      <div class="welcome_event">
+        <table>
+          <tr>
+            <%= content_tag :td, 'イベント名' %>
+            <%= content_tag :td, welcome_event.name %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'イベント説明' %>
+            <%= content_tag :td, welcome_event.description %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '公開状態' %>
+            <%= content_tag :td, welcome_event.publish_status %>
+          </tr>
+        </table>
+
+        <% welcome_event.each_events.each do | event | %>
+          <div class="each_event">
+            <table>
+              <tr>
+                <%= content_tag :td, 'イベント日' %>
+                <%= content_tag :td, event.str_date %>
+              </tr>
+              <tr>
+                <%= content_tag :td, '時間' %>
+                <%= content_tag :td, event.event_time %>
+              </tr>
+              <tr>
+                <%= content_tag :td, '場所' %>
+                <%= content_tag :td, event.site %>
+              </tr>
+              <tr>
+                <%= content_tag :td, 'オンライン' %>
+                <%= content_tag :td, event.is_online %>
+              </tr>
+              <tr>
+                <%= content_tag :td, '説明文' %>
+                <%= content_tag :td, event.description %>
+              </tr>
+            </table>
+          </div>
+        <% end %>
+        <%= link_to 'イベント編集', '#', class: 'btn btn_edit' %>
+        <%= link_to 'イベント削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= content_tag :h2, '公演情報' %>
+  <%= content_tag :p, '今日の日付より前の情報は「公演記録」ページに表示されます' %>
+  <%= content_tag :p, '今日の日付より後の情報は「公演予定」ページに表示されます' %>
+  <% @view.recital_all.each do | recital | %>
+    <p><%= recital.name %></p>
+  <% end %>
+
+  <%= content_tag :h2, 'aboutページ' %>
+  <% @view.commentary_all.each do | commentary | %>
+    <p><%= commentary.heading %></p>
+  <% end %>
+
+  <%= content_tag :h2, 'リンク' %>
+  <% @view.link_all.each do | link | %>
+    <p><%= link.title %></p>
+  <% end %>
+</div>
