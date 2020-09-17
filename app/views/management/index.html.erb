@@ -14,12 +14,11 @@
             <%= content_tag :td, welcome_event.name %>
           </tr>
           <tr>
-            <%= content_tag :td, 'イベント説明' %>
-            <%= content_tag :td, welcome_event.description %>
-          </tr>
-          <tr>
             <%= content_tag :td, '公開状態' %>
             <%= content_tag :td, welcome_event.publish_status %>
+          </tr>
+          <tr>
+            <%= content_tag :td, welcome_event.description, colspan: "2" %>
           </tr>
         </table>
 
@@ -43,8 +42,7 @@
                 <%= content_tag :td, event.is_online %>
               </tr>
               <tr>
-                <%= content_tag :td, '説明文' %>
-                <%= content_tag :td, event.description %>
+                <%= content_tag :td, event.description, colspan: "2" %>
               </tr>
             </table>
           </div>
@@ -55,12 +53,61 @@
     <% end %>
   </div>
 
+  <div class="recital_all">
   <%= content_tag :h2, '公演情報' %>
-  <%= content_tag :p, '今日の日付より前の情報は「公演記録」ページに表示されます' %>
-  <%= content_tag :p, '今日の日付より後の情報は「公演予定」ページに表示されます' %>
-  <% @view.recital_all.each do | recital | %>
-    <p><%= recital.name %></p>
-  <% end %>
+    <%= link_to '公演追加', '#', class: 'btn btn_add' %>
+    <% @view.recital_all.each do | recital | %>
+      <div class="recital">
+        <table>
+          <tr>
+            <%= content_tag :td, '公演名' %>
+            <%= content_tag :td, recital.name %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '日付' %>
+            <%= content_tag :td, recital.str_date %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '開場時刻' %>
+            <%= content_tag :td, recital.opening_time %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '開演時刻' %>
+            <%= content_tag :td, recital.starting_time %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '場所' %>
+            <%= content_tag :td, recital.site %>
+          </tr>
+          <tr>
+            <%= content_tag :td, recital.description, colspan: "2" %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'ポスター' %>
+            <%= content_tag :td do %>
+              <%= image_tag recital.poster.to_s %>
+            <% end %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '演目' %>
+            <td>
+              <% recital.programs.each do | program | %>
+                <p><%== program.text %></p>
+              <% end %>
+            </td>
+          </tr>
+          <% recital.recital_photos.each do | photo | %>
+            <tr>
+              <td colspan="2"><%= image_tag photo.image.to_S %></td>
+            </tr>
+          <% end %>
+        </table>
+
+        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
+        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
 
   <%= content_tag :h2, 'aboutページ' %>
   <% @view.commentary_all.each do | commentary | %>

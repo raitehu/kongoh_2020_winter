@@ -1,3 +1,7 @@
+.container h2{
+    margin: 50px;
+}
+
 .btn{
     display: inline-block;
     height: 40px;
@@ -56,4 +60,32 @@
 
 .welcome_event .each_event table tr td{
     min-width: 100px;
+}
+
+
+.recital_all{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.recital{
+    border: 1px dotted black;
+    margin: 0px auto 10px;
+    padding: 10px;
+}
+
+.recital table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recital table tr td{
+    min-width: 100px;
+    border-top: 1px solid #a0a0a0;
+}
+
+.recital table tr:first-child td{
+    border-top: none;
 }
