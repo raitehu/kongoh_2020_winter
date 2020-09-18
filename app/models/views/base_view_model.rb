@@ -1,29 +1,33 @@
-class Views::BaseViewModel
-  include ActiveModel::Model
-  include ApplicationHelper
+# frozen_string_literal: true
 
-  def page_title
-    ''
-  end
+module Views
+  class BaseViewModel
+    include ActiveModel::Model
+    include ApplicationHelper
 
-  def optional_stylesheets
-    []
-  end
+    def page_title
+      ''
+    end
 
-  ########################################
-  #              連絡手段                 #
-  ########################################
-  # メール
-  def mail_all
-    Settings.contact_means.select { |cm| cm.type == 'mail' }
-  end
+    def optional_stylesheets
+      []
+    end
 
-  # SNS
-  def sns_all
-    Settings.contact_means.select { |cm| cm.type == 'sns' }
-  end
+    ########################################
+    #              連絡手段                 #
+    ########################################
+    # メール
+    def mail_all
+      Settings.contact_means.select { |cm| cm.type == 'mail' }
+    end
 
-  def contact_content
-    Settings.views.top.contact.topics
+    # SNS
+    def sns_all
+      Settings.contact_means.select { |cm| cm.type == 'sns' }
+    end
+
+    def contact_content
+      Settings.views.top.contact.topics
+    end
   end
 end

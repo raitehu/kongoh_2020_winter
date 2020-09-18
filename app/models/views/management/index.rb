@@ -1,33 +1,39 @@
-class Views::Management::Index < Views::BaseViewModel
-  def page_title
-    ' | 管理画面'
-  end
+# frozen_string_literal: true
 
-  def optional_stylesheets
-    css = super
-    css << 'title_area'
-    css << 'management'
+module Views
+  module Management
+    class Index < Views::BaseViewModel
+      def page_title
+        ' | 管理画面'
+      end
 
-    css
-  end
+      def optional_stylesheets
+        css = super
+        css << 'title_area'
+        css << 'management'
 
-  def h1
-    '管理画面'
-  end
+        css
+      end
 
-  def welcome_event_all
-    WelcomeEvent.all
-  end
+      def h1
+        '管理画面'
+      end
 
-  def recital_all
-    Recital.all
-  end
+      def welcome_event_all
+        WelcomeEvent.all
+      end
 
-  def commentary_all
-    Commentary.all
-  end
+      def recital_all
+        Recital.order_by_date
+      end
 
-  def link_all
-    Link.all
+      def commentary_all
+        Commentary.all_order_by_priority
+      end
+
+      def link_all
+        Link.all
+      end
+    end
   end
 end

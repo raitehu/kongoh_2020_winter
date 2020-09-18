@@ -89,3 +89,79 @@
 .recital table tr:first-child td{
     border-top: none;
 }
+
+.commentary_all{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.commentary{
+    border: 1px dotted black;
+    margin: 0px auto 10px;
+    padding: 10px;
+}
+
+.commentary h3{
+    margin: 20px;
+}
+
+.commentary_content{
+    background: #efefef;
+    margin-top: 10px;
+    padding: 10px 5px;
+}
+
+.commentary_content > a{
+    display: inline-block;
+    margin: 0px 2px;
+    padding: 2px 2px;
+    border: 1px solid rgba(0,81,103,1);
+    color: rgba(0,81,103,1);
+}
+
+.commentary_content > a:hover{
+    background-color: rgba(0,81,103,1);
+    color: white;
+}
+
+.link_all{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.link{
+    border: 1px dotted black;
+    margin: 0px auto 10px;
+    padding: 10px;
+}
+
+.link table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.link table tr td{
+    min-width: 100px;
+    border-top: 1px solid #a0a0a0;
+}
+
+.link table tr:first-child td{
+    border-top: none;
+}
+
+.link .each_event{
+    background-color: #efefef;
+    margin: 20px 0px 10px;
+}
+
+.link .each_event table{
+    width: 100%;
+}
+
+.link .each_event table tr td{
+    min-width: 100px;
+}

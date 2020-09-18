@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Recital < ApplicationRecord
   mount_uploader :poster, PosterUploader
   has_many :programs, dependent: :destroy
@@ -5,6 +7,7 @@ class Recital < ApplicationRecord
 
   extend DateTimeConcern
 
+  scope :order_by_date, -> { order(date: :desc) }
   scope :plans, -> { where('date >= ?', Date.today).order(date: :asc) }
   scope :pasts, -> { where('date < ?',  Date.today).order(date: :desc) }
   scope :in_fiscal_year, ->(year) { where(date: fiscal_year_range(year)).order(date: :desc) }

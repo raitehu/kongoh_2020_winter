@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 class WelcomeEvent < ApplicationRecord
   has_many :each_events, dependent: :destroy
 
   scope :plans, lambda {
                   with_each_events.where('date >= ?', Date.today)
                                   .where(is_published: true)
+                                  .order_by_date
                                   .distinct
                 }
 

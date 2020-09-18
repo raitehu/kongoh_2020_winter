@@ -1,22 +1,28 @@
-class Views::AboutKongoh::Index < Views::BaseViewModel
-  def page_title
-    ' | 京大金剛会について'
-  end
+# frozen_string_literal: true
 
-  def optional_stylesheets
-    css = super
-    css << 'title_area'
-    css << 'contacts'
-    css << 'about_kongoh'
+module Views
+  module AboutKongoh
+    class Index < Views::BaseViewModel
+      def page_title
+        ' | 京大金剛会について'
+      end
 
-    css
-  end
+      def optional_stylesheets
+        css = super
+        css << 'title_area'
+        css << 'contacts'
+        css << 'about_kongoh'
 
-  def h1
-    %w[京大金剛会 について]
-  end
+        css
+      end
 
-  def commentaries
-    Commentary.all_order_by_priority
+      def h1
+        %w[京大金剛会 について]
+      end
+
+      def commentaries
+        Commentary.all_order_by_priority
+      end
+    end
   end
 end

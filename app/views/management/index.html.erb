@@ -109,13 +109,47 @@
     <% end %>
   </div>
 
-  <%= content_tag :h2, 'aboutページ' %>
-  <% @view.commentary_all.each do | commentary | %>
-    <p><%= commentary.heading %></p>
-  <% end %>
+  <div class="commentary_all">
+    <%= content_tag :h2, 'Aboutページ' %>
+    <p>優先度が高いものがより上に表示されます</p>
+    <%= link_to '説明文追加', '#', class: 'btn btn_add' %>
+    <% @view.commentary_all.each do | commentary | %>
+      <div class="commentary">
+        <h3><%= commentary.heading %></h3>
+        <p><%= "優先度：#{commentary.priority}" %>
+        <p class="commentary_content"><%== commentary.content %></p>
+        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
+        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
 
-  <%= content_tag :h2, 'リンク' %>
-  <% @view.link_all.each do | link | %>
-    <p><%= link.title %></p>
-  <% end %>
+  <div class="link_all">
+    <%= content_tag :h2, 'リンク' %>
+    <%= link_to 'リンク追加', '#', class: 'btn btn_add' %>
+    <% @view.link_all.each do | link | %>
+      <div class="link">
+        <table>
+          <tr>
+            <%= content_tag :td, '表示名' %>
+            <%= content_tag :td, link.title %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'カテゴリ' %>
+            <%= content_tag :td, link.link_type %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '流派' %>
+            <%= content_tag :td, link.school %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'URL' %>
+            <%= content_tag :td, link.url %>
+          </tr>
+        </table>
+        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
+        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EachEvent < ApplicationRecord
   belongs_to :welcome_event
 
