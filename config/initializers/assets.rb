@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Version of your assets, change this if you want to expire all your assets.
@@ -23,3 +25,4 @@ Rails.application.config.assets.precompile += %w[about_kongoh.css]
 Rails.application.config.assets.precompile += %w[recital_record.css]
 Rails.application.config.assets.precompile += %w[manga.css]
 Rails.application.config.assets.precompile += %w[link.css]
+Rails.application.config.assets.precompile += %w[management.css]

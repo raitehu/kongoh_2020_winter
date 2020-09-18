@@ -1,0 +1,155 @@
+<div class="title_area">
+  <%= content_tag :h1, @view.h1 %>
+</div>
+
+<div class="container">
+  <div class="welcome_event_all">
+    <%= content_tag :h2, '新歓イベント' %>
+    <%= link_to 'イベント追加', '#', class: 'btn btn_add' %>
+    <% @view.welcome_event_all.each do | welcome_event | %>
+      <div class="welcome_event">
+        <table>
+          <tr>
+            <%= content_tag :td, 'イベント名' %>
+            <%= content_tag :td, welcome_event.name %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '公開状態' %>
+            <%= content_tag :td, welcome_event.publish_status %>
+          </tr>
+          <tr>
+            <%= content_tag :td, welcome_event.description, colspan: "2" %>
+          </tr>
+        </table>
+
+        <% welcome_event.each_events.each do | event | %>
+          <div class="each_event">
+            <table>
+              <tr>
+                <%= content_tag :td, 'イベント日' %>
+                <%= content_tag :td, event.str_date %>
+              </tr>
+              <tr>
+                <%= content_tag :td, '時間' %>
+                <%= content_tag :td, event.event_time %>
+              </tr>
+              <tr>
+                <%= content_tag :td, '場所' %>
+                <%= content_tag :td, event.site %>
+              </tr>
+              <tr>
+                <%= content_tag :td, 'オンライン' %>
+                <%= content_tag :td, event.is_online %>
+              </tr>
+              <tr>
+                <%= content_tag :td, event.description, colspan: "2" %>
+              </tr>
+            </table>
+          </div>
+        <% end %>
+        <%= link_to 'イベント編集', '#', class: 'btn btn_edit' %>
+        <%= link_to 'イベント削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="recital_all">
+  <%= content_tag :h2, '公演情報' %>
+    <%= link_to '公演追加', '#', class: 'btn btn_add' %>
+    <% @view.recital_all.each do | recital | %>
+      <div class="recital">
+        <table>
+          <tr>
+            <%= content_tag :td, '公演名' %>
+            <%= content_tag :td, recital.name %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '日付' %>
+            <%= content_tag :td, recital.str_date %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '開場時刻' %>
+            <%= content_tag :td, recital.opening_time %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '開演時刻' %>
+            <%= content_tag :td, recital.starting_time %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '場所' %>
+            <%= content_tag :td, recital.site %>
+          </tr>
+          <tr>
+            <%= content_tag :td, recital.description, colspan: "2" %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'ポスター' %>
+            <%= content_tag :td do %>
+              <%= image_tag recital.poster.to_s %>
+            <% end %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '演目' %>
+            <td>
+              <% recital.programs.each do | program | %>
+                <p><%== program.text %></p>
+              <% end %>
+            </td>
+          </tr>
+          <% recital.recital_photos.each do | photo | %>
+            <tr>
+              <td colspan="2"><%= image_tag photo.image.to_S %></td>
+            </tr>
+          <% end %>
+        </table>
+
+        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
+        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="commentary_all">
+    <%= content_tag :h2, 'Aboutページ' %>
+    <p>優先度が高いものがより上に表示されます</p>
+    <%= link_to '説明文追加', '#', class: 'btn btn_add' %>
+    <% @view.commentary_all.each do | commentary | %>
+      <div class="commentary">
+        <h3><%= commentary.heading %></h3>
+        <p><%= "優先度：#{commentary.priority}" %>
+        <p class="commentary_content"><%== commentary.content %></p>
+        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
+        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="link_all">
+    <%= content_tag :h2, 'リンク' %>
+    <%= link_to 'リンク追加', '#', class: 'btn btn_add' %>
+    <% @view.link_all.each do | link | %>
+      <div class="link">
+        <table>
+          <tr>
+            <%= content_tag :td, '表示名' %>
+            <%= content_tag :td, link.title %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'カテゴリ' %>
+            <%= content_tag :td, link.link_type %>
+          </tr>
+          <tr>
+            <%= content_tag :td, '流派' %>
+            <%= content_tag :td, link.school %>
+          </tr>
+          <tr>
+            <%= content_tag :td, 'URL' %>
+            <%= content_tag :td, link.url %>
+          </tr>
+        </table>
+        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
+        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+      </div>
+    <% end %>
+  </div>
+</div>

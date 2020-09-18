@@ -1,30 +1,36 @@
-class Views::RecitalPlan::Index < Views::BaseViewModel
-  def page_title
-    ' | 公演予定'
-  end
+# frozen_string_literal: true
 
-  def optional_stylesheets
-    css = super
-    css << 'contacts'
-    css << 'title_area'
-    css << 'recital_plan'
+module Views
+  module RecitalPlan
+    class Index < Views::BaseViewModel
+      def page_title
+        ' | 公演予定'
+      end
 
-    css
-  end
+      def optional_stylesheets
+        css = super
+        css << 'contacts'
+        css << 'title_area'
+        css << 'recital_plan'
 
-  def h1
-    '公演予定'
-  end
+        css
+      end
 
-  ########################################
-  #              公演予定                 #
-  ########################################
-  def recital_plan_exists?
-    recital_plans.present?
-  end
+      def h1
+        '公演予定'
+      end
 
-  # 公演予定の一括取得
-  def recital_plans
-    @recital_plans ||= Recital.plans
+      ########################################
+      #              公演予定                 #
+      ########################################
+      def recital_plan_exists?
+        recital_plans.present?
+      end
+
+      # 公演予定の一括取得
+      def recital_plans
+        @recital_plans ||= Recital.plans
+      end
+    end
   end
 end

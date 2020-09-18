@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  get 'management/index'
   get 'link/index'
   get 'manga/index'
   get 'recital_record/index'
@@ -13,6 +16,9 @@ Rails.application.routes.draw do
   get 'link', to: 'link#index', as: 'link'
 
   get 'welcome_event', to: 'welcome_event#index', as: 'welcome_event'
+
+  get 'management', to: 'management#index', as: 'management'
+
   get '*others', to: 'top#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
