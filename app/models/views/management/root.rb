@@ -2,7 +2,7 @@
 
 module Views
   module Management
-    class Index < Views::BaseViewModel
+    class Root < Views::BaseViewModel
       def page_title
         ' | 管理画面'
       end
@@ -20,19 +20,19 @@ module Views
       end
 
       def welcome_event_all
-        WelcomeEvent.all
+        ::WelcomeEvent.all
       end
 
       def recital_all
-        Recital.order_by_date
+        ::Recital.order_by_date
       end
 
       def commentary_all
-        Commentary.all_order_by_priority
+        ::Commentary.all_order_by_priority
       end
 
       def link_all
-        Link.all
+        ::Link.all
       end
     end
   end

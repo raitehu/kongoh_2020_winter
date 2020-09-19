@@ -11,6 +11,7 @@ class WelcomeEvent < ApplicationRecord
                 }
 
   scope :with_each_events, -> { joins(:each_events) }
+  scope :order_by_date, -> { order(date: :desc) }
 
   def publish_status
     is_published ? '公開中' : '非公開'

@@ -17,7 +17,12 @@ Rails.application.routes.draw do
 
   get 'welcome_event', to: 'welcome_event#index', as: 'welcome_event'
 
-  get 'management', to: 'management#index', as: 'management'
+  #  get 'management', to: 'management#index', as: 'management'
+  namespace :management do
+    get '/', to: 'root#index', as: 'root'
+
+    get '*others', to: 'root#index'
+  end
 
   get '*others', to: 'top#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

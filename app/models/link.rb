@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 class Link < ApplicationRecord
   scope :types, -> { select(:link_type).map(&:link_type).uniq }
