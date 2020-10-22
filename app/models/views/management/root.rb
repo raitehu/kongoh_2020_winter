@@ -11,12 +11,17 @@ module Views
         css = super
         css << 'title_area'
         css << 'management'
+        css << 'modal'
 
         css
       end
 
       def h1
         '管理画面'
+      end
+
+      def modal_forms_name
+        %w[welcome_event_form recital_form commentary_form link_form].map{|a| 'management/forms/' + a}
       end
 
       def welcome_event_all
