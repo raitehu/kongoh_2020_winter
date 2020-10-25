@@ -1,4 +1,4 @@
-<%= form_with(model: view.welcome_event_new, local: true, url: 'welcome_event') do | form | %>
+<%= form_with(model: welcome_event, local: true, url: 'welcome_event') do | form | %>
   <div class="field">
     <%= form.label :name, 'イベント名' %>
     <%= form.text_field :name %>
@@ -9,25 +9,13 @@
     <%= form.label :description, 'イベント全体説明' %>
     <%= form.text_area :description %>
     <br>
-    <%= form.fields_for :each_events, view.each_event_new do | ee | %>
-      <%= ee.label :date, '日付' %>
-      <%= ee.date_field :date %>
-      <br>
-      <%= ee.label :starting_time, '開始時間' %>
-      <%= ee.time_field :starting_time %>
-      <br>
-      <%= ee.label :ending_time, '終了時間' %>
-      <%= ee.time_field :ending_time %>
-      <br>
-      <%= ee.label :site, '場所' %>
-      <%= ee.text_field :site %>
-      <br>
-      <%= ee.label :description, '説明' %>
-      <%= ee.text_area :description %>
-      <br>
-      <%= ee.label :is_online, 'オンライン開催' %>
-      <%= ee.check_box :is_online %>
-    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'イベント追加',
+                                  form,
+                                  :each_events,
+                                  partial: 'management/forms/each_event_fields' %>
+    </div>
+
     <br>
     <%= form.submit %>
   </div>

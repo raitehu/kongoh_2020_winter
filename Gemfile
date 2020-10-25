@@ -69,3 +69,5 @@ gem 'rspec-rails', group: %i[development test]
 gem 'config'
 
 gem 'carrierwave'
+
+gem 'cocoon'
