@@ -7,7 +7,7 @@
     <div class="modal js-modal" id="#<%= modal_form_name %>">
       <div class="modal__bg js-modal-close"></div>
       <div class="modal__content">
-        <%= render partial: modal_form_name %>
+        <%= render partial: modal_form_name, locals: { view: @view } %>
         <p><a class="js-modal-close" href="">閉じる</a></p>
       </div>
     </div>

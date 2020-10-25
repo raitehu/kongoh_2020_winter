@@ -11,7 +11,7 @@ module Views
         css = super
         css << 'title_area'
         css << 'management'
-        css << 'modal'
+        #css << 'modal'
 
         css
       end
@@ -38,6 +38,18 @@ module Views
 
       def link_all
         ::Link.all
+      end
+
+      def welcome_event_new
+        ::WelcomeEvent.new
+      end
+
+      def each_event_new
+        ::EachEvent.new
+      end
+
+      def welcome_event_edit event_id
+        Services::WelcomeEvent.find(event_id)
       end
     end
   end

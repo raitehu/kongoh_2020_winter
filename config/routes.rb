@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'welcome_event', to: 'welcome_event#index', as: 'welcome_event'
 
+  post 'welcome_event', to: 'welcome_event#create'
+
   #  get 'management', to: 'management#index', as: 'management'
   namespace :management do
     get '/', to: 'root#index', as: 'root'

@@ -2,6 +2,7 @@
 
 class WelcomeEvent < ApplicationRecord
   has_many :each_events, dependent: :destroy
+  accepts_nested_attributes_for :each_events
 
   scope :plans, lambda {
                   with_each_events.where('date >= ?', Date.today)
