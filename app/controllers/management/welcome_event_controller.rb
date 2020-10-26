@@ -14,7 +14,8 @@ class Management::WelcomeEventController < ApplicationController
   end
 
   def edit
-    target_event
+    @welcome_event = target_event
+    @view = Views::Management::Root.new
   end
 
   def update
