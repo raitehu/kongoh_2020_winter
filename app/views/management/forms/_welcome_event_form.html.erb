@@ -1,4 +1,4 @@
-<%= form_with(model: welcome_event, local: true, url: 'welcome_event') do | form | %>
+<%= form_with(model: welcome_event, local: true, url: '/management/welcome_event') do | form | %>
   <div class="field">
     <%= form.label :name, 'イベント名' %>
     <%= form.text_field :name %>

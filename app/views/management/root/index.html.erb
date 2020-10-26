@@ -60,7 +60,7 @@
           </div>
         <% end %>
         <%= link_to 'イベント編集', '#', class: 'btn btn_edit' %>
-        <%= link_to 'イベント削除', '#', class: 'btn btn_delete' %>
+        <%= link_to 'イベント削除', "/management/welcome_event/#{welcome_event.id}/destroy", class: 'btn btn_delete', data: { confirm: '削除しますか？'} %>
       </div>
     <% end %>
   </div>
