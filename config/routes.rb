@@ -23,6 +23,24 @@ Rails.application.routes.draw do
     post '/welcome_event/:id/', to: 'welcome_event#update'
     get '/welcome_event/:id/destroy', to: 'welcome_event#destroy'
 
+    get '/recital', to: 'recital#index', as: 'recital'
+    post '/recital', to: 'recital#create'
+    get '/recital/:id/', to: 'recital#edit'
+    post '/recital/:id/', to: 'recital#update'
+    get '/recital/:id/destroy', to: 'recital#destroy'
+
+    get '/commentary', to: 'commentary#index', as: 'commentary'
+    post '/commentary', to: 'commentary#create'
+    get '/commentary/:id/', to: 'commentary#edit'
+    post '/commentary/:id/', to: 'commentary#update'
+    get '/commentary/:id/destroy', to: 'commentary#destroy'
+
+    get '/link', to: 'link#index', as: 'link'
+    post '/link', to: 'link#create'
+    get '/link/:id/', to: 'link#edit'
+    post '/link/:id/', to: 'link#update'
+    get '/link/:id/destroy', to: 'link#destroy'
+
     get '*others', to: 'root#index'
   end
 

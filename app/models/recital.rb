@@ -4,6 +4,9 @@ class Recital < ApplicationRecord
   mount_uploader :poster, PosterUploader
   has_many :programs, dependent: :destroy
   has_many :recital_photos, dependent: :destroy
+  accepts_nested_attributes_for :programs, allow_destroy: true
+  accepts_nested_attributes_for :recital_photos, allow_destroy: true
+
 
   extend DateTimeConcern
 
