@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="form">
+    <%= f.label :name, '演目' %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :performance_type, '形式' %>
+    <%= f.text_field :performance_type %>
+    <br>
+    <%= f.label :optional_note, '小書等' %>
+    <%= f.text_field :optional_note %>
+  </div>
+
+  <%= link_to_remove_association '演目を削除', f %>
+</div>

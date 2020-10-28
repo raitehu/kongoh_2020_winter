@@ -1,0 +1,40 @@
+<%= form_with(model: recital, local: true, url: '/management/recital') do | form | %>
+  <div class="field">
+    <%= form.label :name, '公演名' %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :date, '日付' %>
+    <%= form.date_field :date %>
+    <br>
+    <%= form.label :opening_time, '開場時刻' %>
+    <%= form.time_field :opening_time %>
+    <br>
+    <%= form.label :starting_time, '開演時刻' %>
+    <%= form.time_field :starting_time %>
+    <br>
+    <%= form.label :site, '場所' %>
+    <%= form.text_field :site %>
+    <br>
+    <%= form.label :description, '公演説明' %>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.label :poster, '公演ポスター' %>
+    <%= form.file_field :poster %>
+    <br>
+    <div class="links">
+      <%= link_to_add_association '演目追加',
+                                  form,
+                                  :programs,
+                                  partial: 'management/forms/program_fields' %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association '公演写真追加',
+                                  form,
+                                  :recital_photos,
+                                  partial: 'management/forms/recital_photo_fields' %>
+    </div>
+
+    <br>
+    <%= form.submit %>
+  </div>
+<% end %>
