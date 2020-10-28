@@ -6,7 +6,7 @@ class Management::WelcomeEventController < ApplicationController
 
     if welcome_event.save
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '新歓イベントの追加に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -15,13 +15,14 @@ class Management::WelcomeEventController < ApplicationController
 
   def edit
     @welcome_event = target_event
-    @view = Views::Management::Root.new
+    @view = Views::Management::WelcomeEvent.new
+    @view.id = params[:id]
   end
 
   def update
     if target_event.update(welcome_event_params)
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '新歓イベントの編集に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -31,7 +32,7 @@ class Management::WelcomeEventController < ApplicationController
   def destroy
     if target_event.destroy
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '新歓イベントの削除に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path

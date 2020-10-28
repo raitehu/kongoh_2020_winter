@@ -24,6 +24,19 @@ module Views
         %w[welcome_event_form recital_form commentary_form link_form].map{|a| 'management/forms/' + a}
       end
 
+      def post_url
+        {
+          welcome_event: '/management/welcome_event',
+          recital:       '/management/recital',
+          commentary:    '/management/commentary',
+          link:          '/management/link'
+        }
+      end
+
+      def edit?
+        false
+      end
+
       def welcome_event_all
         ::WelcomeEvent.all
       end

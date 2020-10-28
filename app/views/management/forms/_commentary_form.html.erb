@@ -1,9 +1,9 @@
-<%= form_with(model: commentary, local: true, url: '/management/commentary') do | form | %>
+<%= form_with(model: commentary, local: true, url: view.post_url, method: 'post') do | form | %>
   <div class="field">
-    <%= form.label :heading, '段落タイトル' %>
+    <%= form.label :heading, '段落タイトル ※必須' %>
     <%= form.text_field :heading %>
     <br>
-    <%= form.label :content, 'コンテンツ' %>
+    <%= form.label :content, 'コンテンツ ※必須' %>
     <%= form.text_area :content %>
     <br>
     <%= form.label :priority, '優先度' %>

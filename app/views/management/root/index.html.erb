@@ -7,7 +7,7 @@
     <div class="modal js-modal" id="#<%= modal_form_name %>">
       <div class="modal__bg js-modal-close"></div>
       <div class="modal__content">
-        <%= render partial: modal_form_name, locals: { welcome_event: @welcome_event, recital: @recital, commentary: @commentary, link: @link } %>
+        <%= render partial: modal_form_name, locals: { view: @view, welcome_event: @welcome_event, recital: @recital, commentary: @commentary, link: @link } %>
         <p><a class="js-modal-close" href="">閉じる</a></p>
       </div>
     </div>
@@ -115,8 +115,8 @@
           <% end %>
         </table>
 
-        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
-        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+        <%= link_to '公演編集', "/management/recital/#{recital.id}/", class: 'btn btn_edit' %>
+        <%= link_to '公演削除', "/management/recital/#{recital.id}/destroy", class: 'btn btn_delete', data: { confirm: '削除しますか？'} %>
       </div>
     <% end %>
   </div>
@@ -124,14 +124,14 @@
   <div class="commentary_all">
     <%= content_tag :h2, 'Aboutページ' %>
     <p>優先度が高いものがより上に表示されます</p>
-    <%= link_to '説明文追加', '#', class: 'btn btn_add', id: 'btn__commentary_form' %>
+    <%= link_to '段落追加', '#', class: 'btn btn_add', id: 'btn__commentary_form' %>
     <% @view.commentary_all.each do | commentary | %>
       <div class="commentary">
         <h3><%= commentary.heading %></h3>
         <p><%= "優先度：#{commentary.priority}" %>
         <p class="commentary_content"><%== commentary.content %></p>
-        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
-        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+        <%= link_to '段落編集', "/management/commentary/#{commentary.id}/", class: 'btn btn_edit' %>
+        <%= link_to '段落削除', "/management/commentary/#{commentary.id}/destroy", class: 'btn btn_delete', data: { confirm: '削除しますか？'} %>
       </div>
     <% end %>
   </div>
@@ -159,8 +159,8 @@
             <%= content_tag :td, link.url %>
           </tr>
         </table>
-        <%= link_to '公演編集', '#', class: 'btn btn_edit' %>
-        <%= link_to '公演削除', '#', class: 'btn btn_delete' %>
+        <%= link_to 'リンク編集', "/management/link/#{link.id}/", class: 'btn btn_edit' %>
+        <%= link_to 'リンク削除', "/management/link/#{link.id}/destroy", class: 'btn btn_delete', data: { confirm: '削除しますか？'} %>
       </div>
     <% end %>
   </div>

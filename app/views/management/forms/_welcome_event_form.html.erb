@@ -1,15 +1,20 @@
-<%= form_with(model: welcome_event, local: true, url: '/management/welcome_event') do | form | %>
+<%= form_with(model: welcome_event, local: true, url: view.post_url[:welcome_event], method: 'post') do | form | %>
   <div class="field">
-    <%= form.label :name, 'イベント名' %>
+    <%= form.label :name, 'イベント名 ※必須' %>
     <%= form.text_field :name %>
     <br>
     <%= form.label :is_published, '公開状態' %>
     <%= form.check_box :is_published %>
     <br>
-    <%= form.label :description, 'イベント全体説明' %>
+    <%= form.label :description, 'イベント全体説明 ※必須' %>
     <%= form.text_area :description %>
     <br>
     <div class="links">
+      <% if view.edit? %>
+        <%= form.fields_for :each_events do | ee | %>
+          <%= render partial: 'management/forms/each_event_fields', locals: { f: ee } %>
+        <% end %>
+      <% end %>
       <%= link_to_add_association 'イベント追加',
                                   form,
                                   :each_events,

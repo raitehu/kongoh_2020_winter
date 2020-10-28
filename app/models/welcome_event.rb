@@ -4,6 +4,10 @@ class WelcomeEvent < ApplicationRecord
   has_many :each_events, dependent: :destroy
   accepts_nested_attributes_for :each_events, allow_destroy: true
 
+  validates :name, presence: true
+  validates :is_published, presence: true
+  validates :description, presence: true
+
   scope :plans, lambda {
                   with_each_events.where('date >= ?', Date.today)
                                   .where(is_published: true)

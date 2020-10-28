@@ -6,7 +6,7 @@ class Management::CommentaryController < ApplicationController
 
     if commentary.save
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '段落の追加に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -15,13 +15,14 @@ class Management::CommentaryController < ApplicationController
 
   def edit
     @commentary = target_commentary
-    @view = Views::Management::Root.new
+    @view = Views::Management::Commentary.new
+    @view.id = params[:id]
   end
 
   def update
     if target_commentary.update(commentary_params)
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '段落の編集に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -31,7 +32,7 @@ class Management::CommentaryController < ApplicationController
   def destroy
     if target_commentary.destroy
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '段落の削除に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path

@@ -6,7 +6,7 @@ class Management::RecitalController < ApplicationController
 
     if recital.save
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '公演の追加に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -15,13 +15,14 @@ class Management::RecitalController < ApplicationController
 
   def edit
     @recital = target_recital
-    @view = Views::Management::Root.new
+    @view = Views::Management::Recital.new
+    @view.id = params[:id]
   end
 
   def update
     if target_recital.update(recital_params)
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '公演の編集に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -31,7 +32,7 @@ class Management::RecitalController < ApplicationController
   def destroy
     if target_recital.destroy
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: '公演の削除に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path

@@ -6,7 +6,7 @@ class Management::LinkController < ApplicationController
 
     if link.save
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: 'リンクの追加に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -15,13 +15,14 @@ class Management::LinkController < ApplicationController
 
   def edit
     @link = target_link
-    @view = Views::Management::Root.new
+    @view = Views::Management::Link.new
+    @view.id = params[:id]
   end
 
   def update
     if target_link.update(link_params)
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: 'リンクの編集に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
@@ -31,7 +32,7 @@ class Management::LinkController < ApplicationController
   def destroy
     if target_link.destroy
       #TODO: flash message
-      redirect_to management_root_path
+      redirect_to management_root_path, notice: 'リンクの削除に成功しました'
     else
       #TODO: flash message
       redirect_to management_root_path
