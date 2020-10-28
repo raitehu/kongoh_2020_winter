@@ -4,6 +4,10 @@ class Recital < ApplicationRecord
   mount_uploader :poster, PosterUploader
   has_many :programs, dependent: :destroy
   has_many :recital_photos, dependent: :destroy
+  accepts_nested_attributes_for :programs, allow_destroy: true
+  accepts_nested_attributes_for :recital_photos, allow_destroy: true
+
+  validates :name, presence: true
 
   extend DateTimeConcern
 
@@ -18,6 +22,8 @@ class Recital < ApplicationRecord
   scope :with_photos, -> { joins(:recital_photos) }
 
   def str_date
+    return '未定' if date.blank?
+
     date.strftime('%Y年%m月%e日')
   end
 

@@ -3,6 +3,9 @@
 class EachEvent < ApplicationRecord
   belongs_to :welcome_event
 
+  validates :date, presence: true
+  validates :description, presence: true
+
   scope :plans, lambda {
                   joins(:welcome_event)
                     .where('welcome_events.is_published = ?', true)

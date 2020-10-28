@@ -1,0 +1,53 @@
+<%= form_with(model: recital, local: true, url: view.post_url, method: 'post') do | form | %>
+  <div class="field">
+    <%= form.label :name, '公演名 ※必須' %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :date, '日付' %>
+    <%= form.date_field :date %>
+    <br>
+    <%= form.label :opening_time, '開場時刻' %>
+    <%= form.time_field :opening_time %>
+    <br>
+    <%= form.label :starting_time, '開演時刻' %>
+    <%= form.time_field :starting_time %>
+    <br>
+    <%= form.label :site, '場所' %>
+    <%= form.text_field :site %>
+    <br>
+    <%= form.label :description, '公演説明' %>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.label :poster, '公演ポスター' %>
+    <%= form.file_field :poster %>
+    <% if view.edit? && recital.poster.present? %>
+      <%= image_tag recital.poster.to_s %>
+    <% end %>
+    <br>
+    <div class="links">
+      <% if view.edit? %>
+        <%= form.fields_for :programs do | ee | %>
+          <%= render partial: 'management/forms/program_fields', locals: { f: ee} %>
+        <% end %>
+      <% end %>
+      <%= link_to_add_association '演目追加',
+                                  form,
+                                  :programs,
+                                  partial: 'management/forms/program_fields' %>
+    </div>
+    <div class="links">
+      <% if view.edit? %>
+        <%= form.fields_for :recital_photos do | ee | %>
+          <%= render partial: 'management/forms/recital_photo_fields', locals: { f: ee } %>
+        <% end %>
+      <% end %>
+      <%= link_to_add_association '公演写真追加',
+                                  form,
+                                  :recital_photos,
+                                  partial: 'management/forms/recital_photo_fields' %>
+    </div>
+
+    <br>
+    <%= form.submit %>
+  </div>
+<% end %>
