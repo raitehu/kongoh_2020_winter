@@ -1,0 +1,65 @@
+.form_field{
+    max-width: 400px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.form_field input{
+    width: 100%;
+}
+
+.form_field textarea{
+    width: 100%;
+}
+
+.form_field .required::after{
+    content: '※必須';
+    color: #C7243A;
+    font-size: 0.8rem;
+}
+
+.form_field .add_field{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+    border: 1px #A4C520 solid;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.form_field .remove_field{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+    border: 1px #C7243A solid;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.form_field .btn_submit{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+    border: none;
+    background: #A4C520;
+}
+
+.form_field .nested-fields{
+    border: 1px black dotted;
+    padding: 10px;
+}
+
+.form_field .welcome_event_form{
+    margin: 0px;
+    padding: 5px;
+}
+
+.form_field input[type=checkbox]{
+    width: auto;
+}

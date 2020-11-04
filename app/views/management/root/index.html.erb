@@ -4,10 +4,10 @@
 
 <div class="modal_container">
   <% @view.modal_forms_name.each do | modal_form_name | %>
-    <div class="modal js-modal" id="#<%= modal_form_name %>">
+    <div class="modal js-modal" id="<%= modal_form_name %>">
       <div class="modal__bg js-modal-close"></div>
-      <div class="modal__content">
-        <%= render partial: modal_form_name, locals: { view: @view, welcome_event: @welcome_event, recital: @recital, commentary: @commentary, link: @link } %>
+      <div class="modal__content form_field">
+        <%= render partial: "management/forms/#{modal_form_name}", locals: { view: @view, welcome_event: @welcome_event, recital: @recital, commentary: @commentary, link: @link } %>
         <p><a class="js-modal-close" href="">閉じる</a></p>
       </div>
     </div>
@@ -17,7 +17,7 @@
 <div class="container">
   <div class="welcome_event_all">
     <%= content_tag :h2, '新歓イベント' %>
-    <%= link_to 'イベント追加', '#', class: 'btn btn_add', id: 'btn__welcome_event_form' %>
+    <%= link_to 'イベント追加', '#', class: 'btn btn_add js-modal-open', id: 'btn__welcome_event_form' %>
     <% @view.welcome_event_all.each do | welcome_event | %>
       <div class="welcome_event">
         <table>
@@ -67,7 +67,7 @@
 
   <div class="recital_all">
   <%= content_tag :h2, '公演情報' %>
-    <%= link_to '公演追加', '#', class: 'btn btn_add', id: 'btn__recital_form' %>
+    <%= link_to '公演追加', '#', class: 'btn btn_add js-modal-open', id: 'btn__recital_form' %>
     <% @view.recital_all.each do | recital | %>
       <div class="recital">
         <table>
@@ -124,7 +124,7 @@
   <div class="commentary_all">
     <%= content_tag :h2, 'Aboutページ' %>
     <p>優先度が高いものがより上に表示されます</p>
-    <%= link_to '段落追加', '#', class: 'btn btn_add', id: 'btn__commentary_form' %>
+    <%= link_to '段落追加', '#', class: 'btn btn_add js-modal-open', id: 'btn__commentary_form' %>
     <% @view.commentary_all.each do | commentary | %>
       <div class="commentary">
         <h3><%= commentary.heading %></h3>
@@ -138,7 +138,7 @@
 
   <div class="link_all">
     <%= content_tag :h2, 'リンク' %>
-    <%= link_to 'リンク追加', '#', class: 'btn btn_add', id: 'btn__link_form' %>
+    <%= link_to 'リンク追加', '#', class: 'btn btn_add js-modal-open', id: 'btn__link_form' %>
     <% @view.link_all.each do | link | %>
       <div class="link">
         <table>

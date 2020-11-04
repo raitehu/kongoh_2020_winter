@@ -1,6 +1,6 @@
 <%= form_with(model: recital, local: true, url: view.post_url, method: 'post') do | form | %>
   <div class="field">
-    <%= form.label :name, '公演名 ※必須' %>
+    <%= form.label :name, '公演名', class: 'required' %>
     <%= form.text_field :name %>
     <br>
     <%= form.label :date, '日付' %>
@@ -33,7 +33,8 @@
       <%= link_to_add_association '演目追加',
                                   form,
                                   :programs,
-                                  partial: 'management/forms/program_fields' %>
+                                  partial: 'management/forms/program_fields',
+                                  class: 'add_field' %>
     </div>
     <div class="links">
       <% if view.edit? %>
@@ -44,10 +45,11 @@
       <%= link_to_add_association '公演写真追加',
                                   form,
                                   :recital_photos,
-                                  partial: 'management/forms/recital_photo_fields' %>
+                                  partial: 'management/forms/recital_photo_fields',
+                                  class: 'add_field' %>
     </div>
 
     <br>
-    <%= form.submit %>
+    <%= form.submit '公演を登録', class: 'btn_submit' %>
   </div>
 <% end %>

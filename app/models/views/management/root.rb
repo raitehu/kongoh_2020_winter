@@ -11,7 +11,8 @@ module Views
         css = super
         css << 'title_area'
         css << 'management'
-        #css << 'modal'
+        css << 'modal'
+        css << 'form_field'
 
         css
       end
@@ -21,7 +22,7 @@ module Views
       end
 
       def modal_forms_name
-        %w[welcome_event_form recital_form commentary_form link_form].map{|a| 'management/forms/' + a}
+        %w[welcome_event_form recital_form commentary_form link_form]
       end
 
       def post_url
