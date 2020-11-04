@@ -1,10 +1,10 @@
 <div class="nested-fields">
   <div class="form">
-    <%= f.label :name, 'タイトル ※必須' %>
+    <%= f.label :name, 'タイトル', class: 'required' %>
     <%= f.text_field :name %>
     <br>
-    <%= f.label :image, '公演写真 ※必須' %>
+    <%= f.label :image, '公演写真', class: 'required' %>
     <%= f.file_field :image %>
   </div>
-  <%= link_to_remove_association '公演写真を削除', f %>
+  <%= link_to_remove_association '公演写真を削除', f, class: 'remove_field' %>
 </div>

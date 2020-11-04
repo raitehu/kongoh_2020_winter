@@ -1,14 +1,14 @@
-<%= form_with(model: commentary, local: true, url: view.post_url, method: 'post') do | form | %>
+<%= form_with(model: commentary, local: true, url: view.post_url[:commentary], method: 'post') do | form | %>
   <div class="field">
-    <%= form.label :heading, '段落タイトル ※必須' %>
+    <%= form.label :heading, '段落タイトル', class: 'required' %>
     <%= form.text_field :heading %>
     <br>
-    <%= form.label :content, 'コンテンツ ※必須' %>
+    <%= form.label :content, 'コンテンツ', class: 'required' %>
     <%= form.text_area :content %>
     <br>
     <%= form.label :priority, '優先度' %>
     <%= form.number_field :priority %>
     <br>
-    <%= form.submit %>
+    <%= form.submit '段落を登録', class: 'btn_submit' %>
   </div>
 <% end %>

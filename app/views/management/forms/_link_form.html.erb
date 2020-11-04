@@ -1,17 +1,17 @@
-<%= form_with(model: link, local: true, url: view.post_url, method: 'post') do | form | %>
+<%= form_with(model: link, local: true, url: view.post_url[:link], method: 'post') do | form | %>
   <div class="field">
-    <%= form.label :url, 'URL ※必須' %>
+    <%= form.label :url, 'URL', class: 'required' %>
     <%= form.text_field :url %>
     <br>
-    <%= form.label :title, 'サイト名 ※必須' %>
+    <%= form.label :title, 'サイト名', class: 'required' %>
     <%= form.url_field :title %>
     <br>
     <%= form.label :school, '流派' %>
     <%= form.text_field :school %>
     <br>
-    <%= form.label :link_type, 'カテゴリ ※必須' %>
+    <%= form.label :link_type, 'カテゴリ', class: 'required' %>
     <%= form.text_field :link_type %>
     <br>
-    <%= form.submit %>
+    <%= form.submit 'リンクを登録', class: 'btn_submit' %>
   </div>
 <% end %>
