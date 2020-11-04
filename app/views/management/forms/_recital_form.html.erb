@@ -1,4 +1,4 @@
-<%= form_with(model: recital, local: true, url: view.post_url, method: 'post') do | form | %>
+<%= form_with(model: recital, local: true, url: view.post_url[:recital], method: 'post') do | form | %>
   <div class="field">
     <%= form.label :name, '公演名', class: 'required' %>
     <%= form.text_field :name %>

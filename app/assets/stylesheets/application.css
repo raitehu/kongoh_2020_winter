@@ -150,3 +150,7 @@ ul.global_nav_menu{
     width: 100%;
     padding: 0px 5% 0px;
 }
+
+img:not([alt]){
+    filter: none;
+}

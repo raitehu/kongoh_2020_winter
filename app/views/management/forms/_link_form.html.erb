@@ -1,4 +1,4 @@
-<%= form_with(model: link, local: true, url: view.post_url, method: 'post') do | form | %>
+<%= form_with(model: link, local: true, url: view.post_url[:link], method: 'post') do | form | %>
   <div class="field">
     <%= form.label :url, 'URL', class: 'required' %>
     <%= form.text_field :url %>

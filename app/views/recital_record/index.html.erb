@@ -18,7 +18,7 @@
             </p>
             <% recital_record.recital_photos.each do | recital_photo | %>
             <%= recital_photo.name %>
-            <%= recital_photo.image %>
+            <%= image_tag recital_photo.image.to_s %>
             <% end %>
           </div>
         <% end %>
