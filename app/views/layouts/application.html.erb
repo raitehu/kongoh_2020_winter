@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>京大金剛会<%= @view.page_title %></title>
+    <title>京大金剛会<%= @view.page_title if defined?(@view) && defined?(@view.page_title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,8 +9,10 @@
 
     <%= stylesheet_link_tag 'reset.min', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <% @view.optional_stylesheets.each do | css | %>
-      <%= stylesheet_link_tag css, media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if defined?(@view) && defined?(@view.optional_stylesheets) %>
+      <% @view.optional_stylesheets.each do | css | %>
+        <%= stylesheet_link_tag css, media: 'all', 'data-turbolinks-track': 'reload' %>
+      <% end %>
     <% end %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -39,6 +41,13 @@
     <%= yield %>
 
     <footer>
+      <p>
+        <% if member_signed_in? %>
+          <%= link_to 'ログアウト', destroy_member_session_path, method: :delete, class: 'management_page_link' %>
+        <% else %>
+          <%= link_to '部員ログイン', management_root_path, class: 'management_page_link' %>
+        <% end %>
+      </p>
       <p>当サイトの内容、テキスト、画像等の無断転載・無断使用を固く禁じます。</p>
       <p>Unauthorized copying and replication of the contents of this site, text and images are strictly prohibited.</p>
       <br>

@@ -27,6 +27,13 @@ footer{
     text-align: center;
     padding-top: 70px;
 }
+footer .management_page_link{
+    color: #FFFFFF;
+    display: inline-block;
+    border: #FFFFFF 1px solid;
+    padding: 10px 100px;
+    margin-bottom: 40px;
+}
 .menu_area{
     position: fixed;
     bottom: 0;

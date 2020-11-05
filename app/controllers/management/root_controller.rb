@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Management::RootController < ApplicationController
+class Management::RootController < Management::BaseController
   def index
     @view = Views::Management::Root.new
     @welcome_event = ::WelcomeEvent.new

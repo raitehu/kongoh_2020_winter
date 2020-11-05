@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :members
   get '/link/index'
   get '/manga/index'
   get '/recital_record/index'
