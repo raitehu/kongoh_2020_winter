@@ -22,6 +22,35 @@
     background: #C7243A;
 }
 
+.btn.btn_toggle_auth{
+    background: #A4C520;
+    width: 80px;
+}
+
+.btn.btn_toggle_auth.unauthorized{
+    background: #C7243A;
+    width: 80px;
+}
+
+.member_all{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.member_all table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+.member_all table tr td{
+    width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .welcome_event_all{
     width: 100%;
     max-width: 400px;

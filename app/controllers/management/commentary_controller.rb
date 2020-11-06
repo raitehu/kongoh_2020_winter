@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Management::CommentaryController < ApplicationController
+class Management::CommentaryController < Management::BaseController
   def create
     commentary = Commentary.new(commentary_params)
 

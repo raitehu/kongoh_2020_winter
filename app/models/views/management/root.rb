@@ -38,6 +38,10 @@ module Views
         false
       end
 
+      def member_all
+        Member.all
+      end
+
       def welcome_event_all
         ::WelcomeEvent.all
       end

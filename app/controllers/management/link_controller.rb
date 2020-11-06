@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Management::LinkController < ApplicationController
+class Management::LinkController < Management::BaseController
   def create
     link = Link.new(link_params)
 

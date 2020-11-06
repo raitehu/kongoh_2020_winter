@@ -71,3 +71,5 @@ gem 'config'
 gem 'carrierwave'
 
 gem 'cocoon'
+
+gem 'devise'

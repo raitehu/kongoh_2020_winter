@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Management::WelcomeEventController < ApplicationController
+class Management::WelcomeEventController < Management::BaseController
   def create
     welcome_event = WelcomeEvent.new(welcome_event_params)
 

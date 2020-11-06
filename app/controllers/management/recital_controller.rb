@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Management::RecitalController < ApplicationController
+class Management::RecitalController < Management::BaseController
   def create
     recital = Recital.new(recital_params)
 
