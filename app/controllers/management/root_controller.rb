@@ -14,4 +14,14 @@ class Management::RootController < Management::BaseController
 
     @link = Link.new
   end
+
+  def toggle_auth
+    target_member = Member.find_by_id(params[:id])
+    if target_member.is_administrator
+      target_member.update(is_administrator: false)
+    else
+      target_member.update(is_administrator: true)
+    end
+    redirect_to management_root_path
+  end
 end

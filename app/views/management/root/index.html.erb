@@ -15,6 +15,33 @@
 </div>
 
 <div class="container">
+  <div class="member_all">
+    <%= content_tag :h2, '編集者一覧' %>
+    <table>
+      <tr>
+        <th>メールアドレス</th>
+        <th>権限</th>
+      </tr>
+      <% @view.member_all.each do | member | %>
+        <tr>
+          <%= content_tag :td, member.email %>
+          <% if member.is_administrator %>
+            <%= content_tag :td do %>
+              <%= link_to '編集可能', management_toggle_auth_path(member.id), method: 'post', class: 'btn btn_toggle_auth', data: { confirm: 'このユーザの権限を切り替えますか？' } %>
+              <%= link_to '修正', edit_member_registration_path(member.id) %>
+            <% end %>
+          <% else %>
+            <%= content_tag :td do %>
+              <%= link_to '編集不可能', management_toggle_auth_path(member.id), method: 'post', class: 'btn btn_toggle_auth unauthorized', data: { confirm: 'このユーザの権限を切り替えますか？' } %>
+              <%= link_to '修正', edit_member_registration_path(member.id) %>
+            <% end %>
+          <% end %>
+
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
   <div class="welcome_event_all">
     <%= content_tag :h2, '新歓イベント' %>
     <%= link_to '新規イベント作成', '#', class: 'btn btn_add js-modal-open', id: 'btn__welcome_event_form' %>

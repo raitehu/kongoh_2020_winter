@@ -9,11 +9,9 @@ class Members::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    binding.pry
-    super
-    redirect_to management_root_path
-  end
+  # def create
+  #   super
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

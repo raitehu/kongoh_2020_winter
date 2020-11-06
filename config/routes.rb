@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   namespace :management do
     get '/', to: 'root#index', as: 'root'
 
+    post '/toggle_auth/:id/', to: 'root#toggle_auth', as: 'toggle_auth'
+
     get '/welcome_event', to: 'welcome_event#index', as: 'welcome_event'
     post '/welcome_event', to: 'welcome_event#create'
     get '/welcome_event/:id/', to: 'welcome_event#edit'

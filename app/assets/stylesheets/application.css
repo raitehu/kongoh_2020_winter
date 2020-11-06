@@ -161,3 +161,33 @@ ul.global_nav_menu{
 img:not([alt]){
     filter: none;
 }
+.login_form{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+.login_form input{
+    width: 100%;
+}
+.login_form input[type=checkbox]{
+    width: auto;
+}
+.btn_login{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+    background: #A4C520;
+    border: none;
+}
+.btn_signup{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+    background: #FFFFFF;
+    border: #A4C520 1px solid;
+}
