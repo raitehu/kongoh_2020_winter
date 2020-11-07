@@ -55,6 +55,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  encoding: utf8
   host: <%= ENV['PRODUCTION_DATABASE_HOST']%>
   database: <%= ENV['PRODUCTION_DATABASE_NAME'] %>
   username: <%= ENV['PRODUCTION_DATABASE_USER'] %>
