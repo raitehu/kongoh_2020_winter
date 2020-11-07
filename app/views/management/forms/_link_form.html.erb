@@ -1,10 +1,10 @@
 <%= form_with(model: link, local: true, url: view.post_url[:link], method: 'post') do | form | %>
   <div class="field">
     <%= form.label :url, 'URL', class: 'required' %>
-    <%= form.text_field :url %>
+    <%= form.url_field :url %>
     <br>
     <%= form.label :title, 'サイト名', class: 'required' %>
-    <%= form.url_field :title %>
+    <%= form.text_field :title %>
     <br>
     <%= form.label :school, '流派' %>
     <%= form.text_field :school %>
