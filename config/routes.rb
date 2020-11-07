@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/manga/index'
   get '/recital_record/index'
   get '/about_kongoh/index'
-  get '/welcome_event/index'
+  get '/welcome_event', to: 'welcome_event#index', as: 'welcome_event'
   get '/recital_plan/index'
   get '/', to: 'top#index', as: 'root'
   get '/about', to: 'about_kongoh#index', as: 'about'

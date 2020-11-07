@@ -32,7 +32,7 @@ module Views
       end
 
       def welcome_event_plans
-        @welcome_event_plans ||= WelcomeEvent.plans
+        @welcome_event_plans ||= ::WelcomeEvent.plans
       end
 
       # 公開OKかつこれからのイベントのある月だけをDate型の配列で返す
