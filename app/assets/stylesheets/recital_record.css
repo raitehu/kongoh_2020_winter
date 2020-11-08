@@ -20,3 +20,11 @@
 .recital_record h4{
     margin: 20px auto;
 }
+
+.recital_record .recital_photo__image{
+    margin: auto;
+}
+
+.recital_record .recital_photo__title{
+    margin-bottom: 30px;
+}

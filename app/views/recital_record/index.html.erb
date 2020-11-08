@@ -16,9 +16,10 @@
                 <%== program.text %>
               <% end %>
             </p>
+            <%= content_tag :h4, '公演写真' if recital_record.recital_photos.present? %>
             <% recital_record.recital_photos.each do | recital_photo | %>
-            <%= recital_photo.name %>
-            <%= image_tag recital_photo.image.to_s %>
+              <%= image_tag recital_photo.image.to_s, class: 'recital_photo__image' %>
+              <%= content_tag :div, recital_photo.name, class: 'recital_photo__title' %>
             <% end %>
           </div>
         <% end %>
