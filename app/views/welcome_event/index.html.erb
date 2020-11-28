@@ -62,7 +62,7 @@
       <div class="welcome_event_events" id="event_<%= welcome_event.id %>">
         <%= content_tag :h3, welcome_event.name %>
         <div class="event_description">
-          <%= content_tag :p,  welcome_event.description %>
+          <p><%== welcome_event.description %></p>
         </div>
         <%= content_tag :h4, '日　　程' %>
         <% welcome_event.each_events.each do | each_event | %>
@@ -82,9 +82,7 @@
                 <% end %>
               <% end %>
             <% end %>
-            <p>
-              <%== each_event.description %>
-            </p>
+            <p><%== each_event.description %></p>
           </div>
         <% end %>
       </div>
