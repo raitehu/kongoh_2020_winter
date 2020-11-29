@@ -57,7 +57,7 @@
             <%= content_tag :td, welcome_event.publish_status %>
           </tr>
           <tr>
-            <%= content_tag :td, welcome_event.description, colspan: "2" %>
+            <td colspan="2"><%== welcome_event.description %></td>
           </tr>
         </table>
 
@@ -81,7 +81,7 @@
                 <%= content_tag :td, event.is_online %>
               </tr>
               <tr>
-                <%= content_tag :td, event.description, colspan: "2" %>
+                <td colspan="2"><%== event.description %></td>
               </tr>
             </table>
           </div>
@@ -119,7 +119,7 @@
             <%= content_tag :td, recital.site %>
           </tr>
           <tr>
-            <%= content_tag :td, recital.description, colspan: "2" %>
+            <td colspan="2"><%== recital.description %></td>
           </tr>
           <tr>
             <%= content_tag :td, 'ポスター' %>
