@@ -2,9 +2,16 @@
 contact_means:
   - {
       type:  'form',
-      title: '見学・入会希望の方はこちら',
+      title: '新歓イベント参加申し込みはこちら',
       label: '@kyodai_kongoh',
-      url:   '',
+      url:   'https://forms.gle/91XDBYjmZqbsRFjcA',
+      icon:  ''
+    }
+  - {
+      type:  'form',
+      title: '見学・入会に関するお問合せはこちら',
+      label: '@kyodai_kongoh',
+      url:   'https://forms.gle/pEQhKVD3DswEu3NG8',
       icon:  ''
     }
   - {
