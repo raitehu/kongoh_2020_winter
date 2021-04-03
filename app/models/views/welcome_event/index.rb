@@ -4,7 +4,7 @@ module Views
   module WelcomeEvent
     class Index < Views::BaseViewModel
       def page_title
-        ' | 新刊情報'
+        ' | 新歓情報'
       end
 
       def optional_stylesheets

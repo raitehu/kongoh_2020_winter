@@ -1,10 +1,11 @@
 # 連絡手段
 contact_means:
   - {
-      type:    'mail',
-      title:   '見学・入会希望の方はこちら',
-      address: 'kug.shinkan@gmail.com',
-      icon:    ''
+      type:  'form',
+      title: '見学・入会希望の方はこちら',
+      label: '@kyodai_kongoh',
+      url:   '',
+      icon:  ''
     }
   - {
       type:    'mail',
@@ -39,6 +40,6 @@ views:
         - '私たちは入会を年中歓迎しております。'
         - 'お気軽にTwitter、メールなどで連絡を！'
         - 'お稽古の見学なども承っております。'
-        - '令和２年も絶賛新歓中！'
+        - '令和３年も絶賛新歓中！'
         - '心から新入部員を募集しております！！'
         - '何回生でも、何大生でも大歓迎です！！！'

@@ -9,6 +9,15 @@
     <% end %>
   </div>
 
+  <% if defined?(@view.form_all) && @view.form_all.present? %>
+    <!-- email -->
+    <% @view.form_all.each do | form | %>
+      <%= content_tag :p, { class: 'form' } do %>
+        <%= content_tag :a, form.title, { href: form.url } %>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <% if @view.mail_all.present? %>
     <!-- email -->
     <% @view.mail_all.each do | mail | %>
@@ -42,7 +51,7 @@
 
           <div class="event_detail_area">
             <p class="event_detail">
-              <%= link_to '詳細はこちら', welcome_event_path %>
+              <%= link_to '詳細はこちら', welcome_event_path(anchor: "event_#{welcome_event.id}") %>
             </p>
           </div>
         </div>
@@ -86,6 +95,7 @@
   <%= render partial: 'common/contacts',
              locals: {
                       contact_content: @view.contact_content,
+                      form_all:        @view.form_all,
                       mail_all:        @view.mail_all,
                       sns_all:         @view.sns_all
                      }

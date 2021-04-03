@@ -6,6 +6,15 @@
     <% end %>
   <% end %>
 
+  <% if defined?(form_all) && form_all.present? %>
+    <!-- email -->
+    <% form_all.each do | form | %>
+      <%= content_tag :p, { class: 'form' } do %>
+        <%= content_tag :a, form.title, { href: form.url } %>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <% if defined?(mail_all) && mail_all.present? %>
     <!-- email -->
     <% mail_all.each do | mail | %>

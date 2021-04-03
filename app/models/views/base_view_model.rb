@@ -16,6 +16,10 @@ module Views
     ########################################
     #              連絡手段                 #
     ########################################
+    # フォーム
+    def form_all
+      Settings.contact_means.select { |cm| cm.type == 'form' }
+    end
     # メール
     def mail_all
       Settings.contact_means.select { |cm| cm.type == 'mail' }

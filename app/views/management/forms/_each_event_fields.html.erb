@@ -7,7 +7,7 @@
     <%= f.time_field :starting_time %>
     <br>
     <%= f.label :ending_time, '終了時間' %>
-    <%= f.time_field :ending_time %>
+    <%= f.time_field(:ending_time, value: f.object.ending_time) %>
     <br>
     <%= f.label :site, '場所' %>
     <%= f.text_field :site %>
